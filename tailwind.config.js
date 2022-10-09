@@ -5,7 +5,12 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      'bg-primary': ['#33333'],
+    },
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+    },
   },
   plugins: [require('daisyui')],
 }
