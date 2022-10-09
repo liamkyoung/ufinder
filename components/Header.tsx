@@ -1,5 +1,5 @@
 import React from 'react'
-import type { NextPage, Image } from 'next'
+import type { NextPage } from 'next'
 import Link from 'next/link'
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 
