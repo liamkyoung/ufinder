@@ -1,9 +1,38 @@
 import React from 'react'
 import type { NextPage } from 'next'
+import Link from 'next/link'
+import { UserCircleIcon } from '@heroicons/react/24/solid'
 
 const Header: NextPage = () => {
   return (
-    <div className="text-2xl md:text-md lg:text-sm 2xl:text-xs">Header</div>
+    <div className="flex items-center space-x-10 m-5 font-poppins">
+      <div className="text-2xl font-bold">
+        <Link href="/">
+          <h1 className="cursor-pointer">UFinder</h1>
+        </Link>
+      </div>
+
+      <div className="flex space-x-5 items-center flex-grow">
+        <Link href="/chat">
+          <h1 className="hover:font-bold cursor-pointer">Chat</h1>
+        </Link>
+
+        <Link href="/meet">
+          <h1 className="hover:font-bold cursor-pointer">Meet</h1>
+        </Link>
+
+        <Link href="/pair">
+          <h1 className="hover:font-bold cursor-pointer">Pair</h1>
+        </Link>
+      </div>
+      <div className="flex items-center mr-5">
+        <Link href="/profile">
+          <UserCircleIcon className="text-black h-10 cursor-pointer" />
+        </Link>
+
+        <h1 className="ml-3 hover:font-bold cursor-pointer">Logout</h1>
+      </div>
+    </div>
   )
 }
 
