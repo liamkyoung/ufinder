@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   ChevronLeftIcon,
   FaceSmileIcon,
@@ -11,16 +11,60 @@ import Message from './Message'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 import { useDispatch } from 'react-redux'
-import { resetCurrMessenger } from '../redux/slices/currMessengerSlice'
+import {
+  setCurrMessenger,
+  resetCurrMessenger,
+} from '../redux/slices/currMessengerSlice'
+import fs from 'fs'
+import Data from '../data/friends.json'
 
 type Props = {}
+
+type Friend = {
+  id: number
+  name: string
+  online: boolean
+  lastLogin: number
+  messages: Message[]
+}
+
+type Message = {
+  id: number
+  text: string
+  timestamp: number
+}
 
 function MessengerActive({}: Props) {
   const currMessenger = useSelector(
     (state: RootState) => state.currentMessenger.value
   )
   const dispatch = useDispatch()
-  //  ${currMessenger.id === -1 ? 'hidden' : ''}
+  const [currMessage, setMessage] = useState('')
+
+  const sendMessage = () => {
+    let fileData: Friend[] = Data.friendData
+    let foundFriend: Friend = {
+      id: -1,
+      name: '',
+      online: false,
+      lastLogin: Date.now(),
+      messages: [],
+    }
+
+    for (let i = 0; i < fileData.length; i++) {
+      if (fileData[i].id === currMessenger.id) {
+        Object.assign(foundFriend, fileData[i])
+        foundFriend.messages = [
+          ...foundFriend.messages,
+          { id: 0, text: currMessage, timestamp: Date.now() },
+        ]
+        break
+      }
+    }
+
+    if (foundFriend.id !== -1) dispatch(setCurrMessenger(foundFriend))
+  }
+
   return (
     <div className="w-full min-h-max bg-pageGray rounded-xl shadow-sm">
       <div className="flex">
@@ -80,8 +124,11 @@ function MessengerActive({}: Props) {
               type="text"
               placeholder=""
               className="input input-bordered flex-1"
+              onChange={(e) => setMessage(e.target.value)}
             />
-            <button className="btn btn-square">Send</button>
+            <button className="btn btn-square" onClick={sendMessage}>
+              Send
+            </button>
           </div>
         </div>
       </div>
