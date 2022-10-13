@@ -5,15 +5,19 @@ import { UserCircleIcon } from '@heroicons/react/24/solid'
 
 const Header: NextPage = () => {
   return (
-    <div className="flex items-center space-x-10 m-5 font-poppins">
+    <div className="flex items-center space-x-10 m-5 font-poppins text-pageBlue">
       <div className="text-2xl font-bold">
         <Link href="/">
-          <h1 className="cursor-pointer">UFinder</h1>
+          <h1 className="cursor-pointer hover:text-pageOrange">UFinder</h1>
         </Link>
       </div>
 
       <div className="flex space-x-5 items-center flex-grow">
         <Link href="/chat">
+          {/* <div className="indicator">
+            <span className="indicator-item badge badge-success animate-pulse scale-50 translate-x-3"></span>
+            <h1 className="hover:font-bold cursor-pointer">Chat</h1>
+          </div> */}
           <h1 className="hover:font-bold cursor-pointer">Chat</h1>
         </Link>
 
@@ -27,7 +31,7 @@ const Header: NextPage = () => {
       </div>
       <div className="flex items-center mr-5">
         <Link href="/profile">
-          <UserCircleIcon className="text-black h-10 cursor-pointer" />
+          <UserCircleIcon className="h-10 cursor-pointer" />
         </Link>
 
         <h1 className="ml-3 hover:font-bold cursor-pointer">Logout</h1>

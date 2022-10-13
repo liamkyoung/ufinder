@@ -4,7 +4,15 @@
 
 @layer utilities {
   .page {
-    @apply min-h-screen;
+    @apply min-h-screen bg-pageDefault overflow-hidden;
+  }
+
+  .iconButton {
+    @apply rounded-full bg-pageBlue hover:bg-pageOrange cursor-pointer p-2 mr-3 text-center;
+  }
+
+  .chatTitle {
+    @apply text-2xl font-poppins font-bold text-pageGray mb-1;
   }
 }
 
