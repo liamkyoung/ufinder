@@ -1,0 +1,81 @@
+{
+  "headers": ["Name", "Title", "Job"],
+  "friendData": [
+    {
+      "id": 1,
+      "name": "Zakaria Maria",
+      "online": true,
+      "lastLogin": 1665604865,
+      "messages": [
+        {
+          "id": 1,
+          "text": "Hello! How's it going?",
+          "timestamp": 1665604000
+        },
+        {
+          "id": 0,
+          "text": "I'm doing good, how about you?",
+          "timestamp": 1665604800
+        },
+        {
+          "id": 0,
+          "text": "What kind of stuff do you like?",
+          "timestamp": 1665604900
+        },
+        {
+          "id": 1,
+          "text": "I really like swimming. I'm awesome at the 200m",
+          "timestamp": 1665605000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Rachana Agnes",
+      "online": true,
+      "lastLogin": 1665604865,
+      "messages": [
+        {
+          "id": 2,
+          "text": "Maecenas eu velit quis sem tincidunt malesuada. Suspendisse iaculis lectus sapien, eget finibus lacus varius in."
+        },
+        {
+          "id": 0,
+          "text": "Donec sed dui auctor, ultrices nibh aliquam, ornare arcu."
+        },
+        {
+          "id": 0,
+          "text": "Donec vel est eros. Etiam in lorem feugiat, euismod tellus ac, dictum nunc."
+        },
+        {
+          "id": 2,
+          "text": "Cras semper mauris a felis consectetur pulvinar."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Richard Peterson",
+      "online": false,
+      "lastLogin": 166561115,
+      "messages": [
+        {
+          "id": 2,
+          "text": "Maecenas eu velit quis sem tincidunt malesuada. Suspendisse iaculis lectus sapien, eget finibus lacus varius in."
+        },
+        {
+          "id": 0,
+          "text": "Donec sed dui auctor, ultrices nibh aliquam, ornare arcu."
+        },
+        {
+          "id": 0,
+          "text": "Donec vel est eros. Etiam in lorem feugiat, euismod tellus ac, dictum nunc."
+        },
+        {
+          "id": 2,
+          "text": "Cras semper mauris a felis consectetur pulvinar."
+        }
+      ]
+    }
+  ]
+}
