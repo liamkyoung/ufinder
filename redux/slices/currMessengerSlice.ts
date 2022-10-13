@@ -15,13 +15,13 @@ type Friend = {
   messages: Message[]
 }
 
-export interface CounterState {
+export interface currMessengerState {
   value: Friend
 }
 
-const initialState: CounterState = {
+const initialState: currMessengerState = {
   value: {
-    id: 0,
+    id: -1,
     name: '',
     online: false,
     lastLogin: 0,
@@ -38,7 +38,7 @@ export const currMessengerSlice = createSlice({
     },
     resetCurrMessenger: (state) => {
       state.value = {
-        id: 0,
+        id: -1,
         name: '',
         online: false,
         lastLogin: 0,

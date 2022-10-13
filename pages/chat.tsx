@@ -18,7 +18,6 @@ const Chat: NextPage = () => {
         </div>
         {/* Chats */}
         <div className="col-span-full md:col-span-2 p-5 md:p-10 row-span-2">
-          <h1 className="chatTitle">Messenger</h1>
           <Messenger />
         </div>
       </div>

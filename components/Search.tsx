@@ -1,8 +1,11 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setSearch } from '../redux/slices/searchSlice'
 
 type Props = {}
 
 function Search({}: Props) {
+  const dispatch = useDispatch()
   return (
     <div className="form-control">
       <div className="input-group">
@@ -10,6 +13,7 @@ function Search({}: Props) {
           type="text"
           placeholder="Search…"
           className="input input-bordered w-full"
+          onChange={(e) => dispatch(setSearch(e.target.value))}
         />
         <button className="btn btn-square no-animation">
           <svg

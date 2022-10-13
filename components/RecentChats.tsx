@@ -28,15 +28,20 @@ function RecentChats({ headers, friends }: Props) {
   const currMessenger = useSelector(
     (state: RootState) => state.currentMessenger.value
   )
+  const search = useSelector((state: RootState) => state.search.value)
   const dispatch = useDispatch()
   let onlineFriends = 0
   const friendNames = friends?.map((f, i) => {
+    if (search !== '' && !f.name.includes(search)) return
+
     const offlineHours = new Date(f.lastLogin).getHours()
     return (
       <li
         key={i}
         className={
-          f.online ? 'border-l-4 border-b-0 border-pageGreen' : 'disabled'
+          f.online
+            ? 'border-l-4 border-b-0 border-pageGreen'
+            : 'border-l-4 border-b-0 border-red-700'
         }
         value={f.name}
         onClick={() => dispatch(setCurrMessenger(f))}
@@ -46,13 +51,15 @@ function RecentChats({ headers, friends }: Props) {
             {f.online ? (
               <FaceSmileIcon className="h-8 text-white mr-2" />
             ) : null}
-            <a className="font-bold">{f.name}</a>
+            <a className={f.online ? `font-bold` : `italic opacity-70`}>
+              {f.name}
+            </a>
           </div>
 
           {f.online ? (
             <a className="badge badge-md bg-success text-black">Online</a>
           ) : (
-            <a className="text-sm italic">
+            <a className="text-sm italic opacity-70">
               Last Online:{' '}
               {offlineHours > 1 ? `${offlineHours} hours ago` : ' <1 hour ago'}
             </a>
