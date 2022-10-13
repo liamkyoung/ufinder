@@ -7,30 +7,33 @@ import {
   StarIcon,
 } from '@heroicons/react/24/solid'
 import Message from './Message'
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/store'
 
-type Props = {
-  messages: Message[]
-}
+type Props = {}
 
-type Message = {
-  id: number
-  text: string
-  timestamp: number
-}
-
-function Messenger({ messages }: Props) {
+function Messenger({}: Props) {
+  const currMessenger = useSelector(
+    (state: RootState) => state.currentMessenger.value
+  )
   return (
     <div className="w-full min-h-max bg-pageGray rounded-xl shadow-sm">
       <div className="flex">
         {/* Header */}
         <div
           id="messenger-header"
-          className="flex justify-between items-center w-full p-5 h-min sticky top-0"
+          className="flex justify-between items-center w-full p-5 h-min sticky top-0 shadow-lg"
         >
-          <ChevronLeftIcon className="h-8 text-zinc-100" />
+          <ChevronLeftIcon className="h-8 text-zinc-100 cursor-pointer hover:text-zinc-400" />
           <div className="flex items-center">
-            <FaceSmileIcon className="h-12 text-pageGreen pr-2" />
-            <h1 className="text-zinc-100 font-bold text-xl">Zakaria Maria</h1>
+            <FaceSmileIcon
+              className={`h-10  pr-2 ${
+                currMessenger.online ? 'text-pageGreen' : 'text-white'
+              }`}
+            />
+            <h1 className="text-zinc-100 font-bold text-xl">
+              {currMessenger.name}
+            </h1>
           </div>
           <div className="flex">
             <div className="iconButton">
@@ -46,23 +49,19 @@ function Messenger({ messages }: Props) {
           </div>
         </div>
       </div>
-      {/* Messages */}
-      <div className="divider px-10">OR</div>
-      <div className="p-5 overflow-y-scroll max-h-80">
-        <Message user={true} text="user text" />
-        <Message user={false} text="other text" />
-        <Message
-          user={false}
-          text="Sint ad consectetur officia ea cupidatat nostrud est labore sit incididunt."
-        />
-        <Message
-          user={true}
-          text="Labore minim do tempor fugiat consequat ad irure cillum eiusmod Lorem exercitation consequat. Aliquip eu sit aliquip ullamco deserunt consectetur Lorem in commodo veniam sit nostrud. Excepteur sit incididunt deserunt cupidatat aliquip ipsum mollit quis culpa dolor nulla labore consectetur.."
-        />
-        <Message
-          user={false}
-          text="Labore minim do tempor fugiat consequat ad irure cillum eiusmod Lorem exercitation consequat. Aliquip eu sit aliquip ullamco deserunt consectetur Lorem in commodo veniam sit nostrud. Excepteur sit incididunt deserunt cupidatat aliquip ipsum mollit quis culpa dolor nulla labore consectetur.."
-        />
+      <div className="p-5 overflow-y-scroll max-h-80 shadow-lg">
+        {/* Messages */}
+        <div className="divider px-10">
+          {new Date(currMessenger.lastLogin).toLocaleDateString()}
+        </div>
+        {currMessenger.messages.map((msg, i) => (
+          <Message
+            key={i}
+            user={msg.id == 0 ? true : false}
+            text={msg.text}
+            timestamp={msg.timestamp}
+          />
+        ))}
       </div>
       {/* Send Message */}
       <div className="flex justify-end p-3">

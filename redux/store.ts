@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slices/counterSlice'
+import currMessengerReducer from './slices/currMessengerSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    currentMessenger: currMessengerReducer,
   },
 })
 

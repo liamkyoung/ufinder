@@ -14,7 +14,10 @@ const Header: NextPage = () => {
 
       <div className="flex space-x-5 items-center flex-grow">
         <Link href="/chat">
-          <h1 className="hover:font-bold cursor-pointer">Chat</h1>
+          <div className="indicator">
+            <span className="indicator-item badge badge-success animate-pulse scale-50 translate-x-3"></span>
+            <h1 className="hover:font-bold cursor-pointer">Chat</h1>
+          </div>
         </Link>
 
         <Link href="/meet">

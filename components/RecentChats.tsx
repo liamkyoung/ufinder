@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { FaceSmileIcon } from '@heroicons/react/24/outline'
 import Search from './Search'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCurrMessenger } from '../redux/slices/currMessengerSlice'
+import type { RootState } from '../redux/store'
 
 type Message = {
   id: number
@@ -8,7 +11,7 @@ type Message = {
   timestamp: number
 }
 
-type Friends = {
+type Friend = {
   id: number
   name: string
   online: boolean
@@ -18,11 +21,15 @@ type Friends = {
 
 type Props = {
   headers: string[]
-  friends: Friends[]
+  friends: Friend[]
 }
 
 function RecentChats({ headers, friends }: Props) {
-  const tableHeaders = headers?.map((h, i) => <th key={i}>{h}</th>)
+  const currMessenger = useSelector(
+    (state: RootState) => state.currentMessenger.value
+  )
+  const dispatch = useDispatch()
+  let onlineFriends = 0
   const friendNames = friends?.map((f, i) => {
     const offlineHours = new Date(f.lastLogin).getHours()
     return (
@@ -31,9 +38,17 @@ function RecentChats({ headers, friends }: Props) {
         className={
           f.online ? 'border-l-4 border-b-0 border-pageGreen' : 'disabled'
         }
+        value={f.name}
+        onClick={() => dispatch(setCurrMessenger(f))}
       >
         <div className="flex justify-between">
-          <a>{f.name}</a>
+          <div className="flex items-center">
+            {f.online ? (
+              <FaceSmileIcon className="h-8 text-white mr-2" />
+            ) : null}
+            <a className="font-bold">{f.name}</a>
+          </div>
+
           {f.online ? (
             <a className="badge badge-md bg-success text-black">Online</a>
           ) : (
@@ -47,10 +62,17 @@ function RecentChats({ headers, friends }: Props) {
     )
   })
 
+  for (let i = 0; i < friends.length; i++) {
+    if (friends[i].online) onlineFriends++
+  }
+
   return (
     <div className="max-h-80">
       <Search />
-      <ul className="menu bg-base-100 rounded-box mt-5">{friendNames}</ul>
+      <h2 className="text-md text-left text-pageGray font-bold mt-5 ml-1">
+        {onlineFriends} Friends Online
+      </h2>
+      <ul className="menu bg-base-100 rounded-box mt-1">{friendNames}</ul>
     </div>
   )
 }

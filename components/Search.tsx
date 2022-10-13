@@ -11,7 +11,7 @@ function Search({}: Props) {
           placeholder="Search…"
           className="input input-bordered w-full"
         />
-        <button className="btn btn-square">
+        <button className="btn btn-square no-animation">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
