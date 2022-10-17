@@ -12,6 +12,7 @@ type Friend = {
   name: string
   online: boolean
   lastLogin: number
+  similarInterests: string[]
   messages: Message[]
 }
 

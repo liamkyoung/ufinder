@@ -6,6 +6,7 @@
       "name": "Zakaria Maria",
       "online": true,
       "lastLogin": 1665604865,
+      "similarInterests": ["Golf", "Poker"],
       "messages": [
         {
           "id": 1,
@@ -34,6 +35,7 @@
       "name": "Rachana Agnes",
       "online": true,
       "lastLogin": 1665604865,
+      "similarInterests": ["Painting", "Action Movies"],
       "messages": [
         {
           "id": 2,
@@ -62,6 +64,7 @@
       "name": "Richard Peterson",
       "online": false,
       "lastLogin": 166561115,
+      "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
           "id": 3,
@@ -90,6 +93,7 @@
       "name": "Nancy Drew",
       "online": false,
       "lastLogin": 160769115,
+      "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
           "id": 4,

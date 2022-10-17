@@ -6,7 +6,7 @@ import {
   UserMinusIcon,
   StarIcon,
   MoonIcon,
-  NoSymbolIcon,
+  QuestionMarkCircleIcon,
 } from '@heroicons/react/24/solid'
 import Message from './Message'
 import { useSelector } from 'react-redux'
@@ -16,8 +16,7 @@ import {
   setCurrMessenger,
   resetCurrMessenger,
 } from '../redux/slices/currMessengerSlice'
-import fs from 'fs'
-import Data from '../data/friends.json'
+import AnonymousData from '../data/anonymous.json'
 import Modal from '../components/Modal'
 
 type Props = {}
@@ -37,20 +36,22 @@ type Message = {
   timestamp: number
 }
 
-function MessengerActive({}: Props) {
+function AnonymousMessenger({}: Props) {
   const currMessenger = useSelector(
     (state: RootState) => state.currentMessenger.value
   )
   const dispatch = useDispatch()
   const [currMessage, setMessage] = useState('')
+  const currInterests = currMessenger?.similarInterests.join(', ')
 
   const sendMessage = () => {
-    let fileData: Friend[] = Data.friendData
+    let fileData: Friend[] = AnonymousData.friendData
     let foundFriend: Friend = {
       id: -1,
       name: '',
       online: false,
       lastLogin: Date.now(),
+      similarInterests: [],
       messages: [],
     }
 
@@ -66,8 +67,6 @@ function MessengerActive({}: Props) {
     }
 
     if (foundFriend.id !== -1) dispatch(setCurrMessenger(foundFriend))
-
-    setMessage('')
   }
 
   return (
@@ -86,30 +85,27 @@ function MessengerActive({}: Props) {
             className="h-8 text-zinc-100 cursor-pointer hover:text-zinc-400"
             onClick={() => dispatch(resetCurrMessenger())}
           />
-          <div className="flex items-center">
-            {currMessenger?.online ? (
-              <FaceSmileIcon className={`h-10  pr-2 text-pageGreen`} />
-            ) : (
-              <MoonIcon className={`h-6  pr-2 text-pageBlue`} />
-            )}
-
-            <h1 className="text-zinc-100 font-bold text-xl">
-              {currMessenger?.name}
-            </h1>
+          <div className="flex items-center flex-1 justify-center">
+            <QuestionMarkCircleIcon className="h-12 text-pageGreen" />
+            <div className="pl-5">
+              <h1 className="text-zinc-100 font-bold text-xl">
+                {currMessenger?.name}
+              </h1>
+              <h2 className="text-zinc-100 text-sm font-bold">
+                Similar Interests:
+              </h2>
+              <h3 className="text-zinc-100 text-sm italic">{currInterests}</h3>
+            </div>
           </div>
-          <div className="flex">
+          <div className="flex items-end">
             <div className="iconButton">
               <UserPlusIcon className="h-6 text-zinc-100" />
             </div>
             <a href="#my-modal-2">
               <div className="iconButton">
-                <NoSymbolIcon className="h-6 text-zinc-100" />
+                <UserMinusIcon className="h-6 text-zinc-100" />
               </div>
             </a>
-            <div className="iconButton">
-              {' '}
-              <StarIcon className="h-6 text-zinc-100" />
-            </div>
           </div>
         </div>
       </div>
@@ -148,4 +144,4 @@ function MessengerActive({}: Props) {
   )
 }
 
-export default MessengerActive
+export default AnonymousMessenger

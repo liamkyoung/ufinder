@@ -16,7 +16,6 @@ type Friend = {
   name: string
   online: boolean
   lastLogin: number
-  similarInterests: string[]
   messages: Message[]
 }
 
@@ -24,7 +23,7 @@ type Props = {
   friends: Friend[]
 }
 
-function RecentChats({ friends }: Props) {
+function AnonymousChats({ friends }: Props) {
   const currMessenger = useSelector(
     (state: RootState) => state.currentMessenger.value
   )
@@ -40,7 +39,7 @@ function RecentChats({ friends }: Props) {
         key={i}
         className={
           f.online
-            ? 'border-l-4 border-b-0 border-pageGreen'
+            ? 'border-l-4 border-b-0 border-pageOrange'
             : 'border-l-4 border-b-0 border-red-700'
         }
         value={f.name}
@@ -75,13 +74,12 @@ function RecentChats({ friends }: Props) {
 
   return (
     <div className="max-h-80">
-      <Search />
       <h2 className="text-md text-left text-pageGray font-bold mt-5 ml-1">
-        {onlineFriends} Friends Online
+        {onlineFriends} Anonymous Messages
       </h2>
       <ul className="menu bg-base-100 rounded-box mt-1">{friendNames}</ul>
     </div>
   )
 }
 
-export default RecentChats
+export default AnonymousChats

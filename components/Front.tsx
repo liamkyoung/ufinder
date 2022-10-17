@@ -5,15 +5,17 @@ import Link from 'next/link'
 const Front: NextPage = () => {
   return (
     <div className="row">
-      <div className="col-lg-6 alltext">
+      <div className="col-lg-6 alltext text-pageGray font-bold">
         <h1 className="big-heading">Gainesville&apos;s Best Friend Finder.</h1>
         <h2>Meet Gators Just Like You!</h2>
-        <button
-          type="button"
-          className="btn btn-outline btn-lg download-button"
-        >
-          Click here to start &gt;{' '}
-        </button>
+        <Link href="/meet">
+          <button
+            type="button"
+            className="btn btn-lg download-button btn-warning"
+          >
+            Click here to start &gt;{' '}
+          </button>
+        </Link>
       </div>
       <div className="item1 rounded">
         <img

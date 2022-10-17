@@ -5,6 +5,7 @@ import HeadMetaData from '../components/HeadMetaData'
 import RecentChats from '../components/RecentChats'
 import Data from '../data/friends.json'
 import Messenger from '../components/Messenger'
+import Modal from '../components/Modal'
 
 const Chat: NextPage = () => {
   return (
