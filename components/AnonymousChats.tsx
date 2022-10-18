@@ -74,9 +74,7 @@ function AnonymousChats({ friends }: Props) {
 
   return (
     <div className="max-h-80">
-      <h2 className="text-md text-left text-pageGray font-bold mt-5 ml-1">
-        {onlineFriends} Anonymous Messages
-      </h2>
+      <h2 className="chatTitle mt-5">{onlineFriends} Anonymous Messages</h2>
       <ul className="menu bg-base-100 rounded-box mt-1">{friendNames}</ul>
     </div>
   )

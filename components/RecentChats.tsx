@@ -76,9 +76,7 @@ function RecentChats({ friends }: Props) {
   return (
     <div className="max-h-80">
       <Search />
-      <h2 className="text-md text-left text-pageGray font-bold mt-5 ml-1">
-        {onlineFriends} Friends Online
-      </h2>
+      <h2 className="chatTitle mt-5">{onlineFriends} Friends Online</h2>
       <ul className="menu bg-base-100 rounded-box mt-1">{friendNames}</ul>
     </div>
   )

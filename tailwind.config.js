@@ -18,6 +18,15 @@ module.exports = {
         pageOrange: '#f7a278',
         pageGreen: '#419D78',
       },
+      keyframes: {
+        colorChange: {
+          '0%, 100%': { color: '#f7a278', opacity: '100%' },
+          '50%': { color: '#6daffe', opacity: '100%' },
+        },
+      },
+      animation: {
+        colorChange: 'colorChange 5s linear infinite',
+      },
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],

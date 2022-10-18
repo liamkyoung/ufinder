@@ -22,7 +22,6 @@ const Chat: NextPage = () => {
         {currMessenger?.id === -1 ? (
           <div className="">
             <RecentChats friends={Data.friendData} />
-            <div className="divider w-full"></div>
             <div className="pt-2">
               {' '}
               <AnonymousChats friends={AnonymousData.friendData} />

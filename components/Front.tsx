@@ -8,7 +8,7 @@ const Front: NextPage = () => {
       <div className="col-lg-6 alltext text-pageGray font-bold">
         <h1 className="big-heading">Gainesville&apos;s Best Friend Finder.</h1>
         <h2>Meet Gators Just Like You!</h2>
-        <Link href="/meet">
+        <Link href="/pair">
           <button
             type="button"
             className="btn btn-lg download-button btn-warning"

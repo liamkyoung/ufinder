@@ -7,6 +7,7 @@ import {
   StarIcon,
   MoonIcon,
   QuestionMarkCircleIcon,
+  HeartIcon,
 } from '@heroicons/react/24/solid'
 import Message from './Message'
 import { useSelector } from 'react-redux'
@@ -67,6 +68,8 @@ function AnonymousMessenger({}: Props) {
     }
 
     if (foundFriend.id !== -1) dispatch(setCurrMessenger(foundFriend))
+
+    setMessage('')
   }
 
   return (
@@ -91,10 +94,13 @@ function AnonymousMessenger({}: Props) {
               <h1 className="text-zinc-100 font-bold text-xl">
                 {currMessenger?.name}
               </h1>
-              <h2 className="text-zinc-100 text-sm font-bold">
-                Similar Interests:
-              </h2>
-              <h3 className="text-zinc-100 text-sm italic">{currInterests}</h3>
+              <div className="flex items-center">
+                <HeartIcon className="h-4 text-red-600" />
+                <h3 className="text-zinc-100 text-sm italic mx-2">
+                  {currInterests}
+                </h3>
+                <HeartIcon className="h-4 text-red-600" />
+              </div>
             </div>
           </div>
           <div className="flex items-end">
@@ -129,7 +135,7 @@ function AnonymousMessenger({}: Props) {
           <div className="input-group w-full">
             <input
               type="text"
-              placeholder=""
+              placeholder="Send message"
               className="input input-bordered flex-1"
               onChange={(e) => setMessage(e.target.value)}
               value={currMessage}
