@@ -4,9 +4,20 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  daisyui: {
+    themes: ['dark'],
+  },
+
   theme: {
     extend: {
-      'bg-primary': ['#33333'],
+      colors: {
+        pageDefault: '#edf6ff',
+        pageLightBlue: '#6daffe',
+        pageBlue: '#437fc7',
+        pageGray: '#424c55',
+        pageOrange: '#f7a278',
+        pageGreen: '#419D78',
+      },
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
