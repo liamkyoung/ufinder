@@ -1,11 +1,11 @@
 {
-  "headers": ["Name", "Title", "Job"],
   "friendData": [
     {
       "id": 1,
       "name": "Zakaria Maria",
       "online": true,
       "lastLogin": 1665604865,
+      "favorite": true,
       "similarInterests": ["Golf", "Poker"],
       "messages": [
         {
@@ -63,6 +63,7 @@
       "id": 3,
       "name": "Richard Peterson",
       "online": false,
+      "favorite": false,
       "lastLogin": 166561115,
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
@@ -92,6 +93,7 @@
       "id": 4,
       "name": "Nancy Drew",
       "online": false,
+      "favorite": true,
       "lastLogin": 160769115,
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [

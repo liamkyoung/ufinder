@@ -17,6 +17,7 @@ module.exports = {
         pageGray: '#424c55',
         pageOrange: '#f7a278',
         pageGreen: '#419D78',
+        pageDarkBlue: '#11546A',
       },
       keyframes: {
         colorChange: {
@@ -25,11 +26,12 @@ module.exports = {
         },
       },
       animation: {
-        colorChange: 'colorChange 5s linear infinite',
+        colorChange: 'colorChange 10s linear infinite',
       },
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
+      cartoon: ['Lilita One', 'cursive'],
     },
   },
   plugins: [require('daisyui')],

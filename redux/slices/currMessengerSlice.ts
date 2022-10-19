@@ -11,6 +11,7 @@ type Friend = {
   id: number
   name: string
   online: boolean
+  favorite: boolean
   lastLogin: number
   similarInterests: string[]
   messages: Message[]
@@ -24,8 +25,10 @@ const initialState: currMessengerState = {
   value: {
     id: -1,
     name: '',
+    favorite: false,
+    similarInterests: [],
     online: false,
-    lastLogin: 0,
+    lastLogin: Date.now(),
     messages: [],
   },
 }
@@ -41,8 +44,10 @@ export const currMessengerSlice = createSlice({
       state.value = {
         id: -1,
         name: '',
+        favorite: false,
+        similarInterests: [],
         online: false,
-        lastLogin: 0,
+        lastLogin: Date.now(),
         messages: [],
       }
     },

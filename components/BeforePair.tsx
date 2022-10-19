@@ -8,8 +8,8 @@ type Props = {}
 function BeforePair({}: Props) {
   const dispatch = useDispatch()
   return (
-    <div className="centerFlexCol text-black font-poppins mt-12">
-      <h1 className="md:text-4xl text-2xl">Pair with a New Friend</h1>
+    <div className="centerFlexCol text-black font-cartoon mt-12">
+      <h1 className="md:text-5xl text-3xl">Pair with a New Friend</h1>
       <h2 className="lg:text-lg text-sm">
         Find another person also looking for a friend!
       </h2>

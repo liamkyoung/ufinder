@@ -36,7 +36,7 @@ function MessengerInactive({}: Props) {
   const randomFriend: Friend =
     Data.friendData[Math.floor(Math.random() * Data.friendData.length)]
   return (
-    <div className="w-full min-h-max bg-pageGray rounded-xl shadow-sm h-80">
+    <div className="w-full min-h-max bg-pageGray font-cartoon rounded-xl shadow-sm h-80">
       <div className="flex justify-center items-center text-center flex-1 h-full">
         <h1
           className="text-2xl text-white font-bold btn btn-success"

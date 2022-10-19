@@ -17,13 +17,13 @@ function DuringPair({}: Props) {
   useEffect(() => {
     timer = setTimeout(
       () => dispatch(increment()),
-      Math.floor(Math.random() * 4000)
+      Math.floor(Math.random() * 4000) + 1000
     )
     return () => clearTimeout(timer)
   }, [])
 
   return (
-    <div className="centerFlexCol h-screen text-black font-poppins overflow-hidden -mt-24">
+    <div className="centerFlexCol h-screen text-black font-cartoon overflow-hidden -mt-24">
       <h1 className="text-2xl font-bold">Pairing in Progress</h1>
       <h1 className="text-xl pt-3 mb-12">Please Wait...</h1>
       <Loader />

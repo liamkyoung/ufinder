@@ -26,6 +26,7 @@ type Friend = {
   id: number
   name: string
   online: boolean
+  favorite: boolean
   lastLogin: number
   similarInterests: string[]
   messages: Message[]
@@ -43,12 +44,15 @@ function MessengerActive({}: Props) {
   )
   const dispatch = useDispatch()
   const [currMessage, setMessage] = useState('')
+  const [currFavorite, setFavorite] = useState(currMessenger.favorite)
 
   const sendMessage = () => {
     let fileData: Friend[] = Data.friendData
     let foundFriend: Friend = {
       id: -1,
       name: '',
+      favorite: false,
+      similarInterests: [],
       online: false,
       lastLogin: Date.now(),
       messages: [],
@@ -73,9 +77,22 @@ function MessengerActive({}: Props) {
   return (
     <div className="w-full min-h-max bg-pageGray rounded-xl shadow-sm">
       <Modal
+        title={`Add ${currMessenger?.name} as a friend?`}
+        subtitle={''}
+        handler={resetCurrMessenger}
+        id="add-friend-modal"
+        button1={['btn btn-success', 'Add to Friend List']}
+        button2={['btn btn-error', 'Exit']}
+      />
+      <Modal
         title={`Block ${currMessenger?.name}?`}
         subtitle="User will not be able to send you messages, view your profile, or connect with you once blocked."
+        handler={resetCurrMessenger}
+        id="block-modal"
+        button1={['btn btn-error', 'Block']}
+        button2={['btn btn-info', 'Go Back']}
       />
+
       <div className="flex">
         {/* Header */}
         <div
@@ -98,15 +115,22 @@ function MessengerActive({}: Props) {
             </h1>
           </div>
           <div className="flex">
-            <div className="iconButton">
-              <UserPlusIcon className="h-6 text-zinc-100" />
-            </div>
-            <a href="#my-modal-2">
+            <a href="#add-friend-modal">
+              <div className="iconButton">
+                <UserPlusIcon className="h-6 text-zinc-100" />
+              </div>
+            </a>
+
+            <a href="#block-modal">
               <div className="iconButton">
                 <NoSymbolIcon className="h-6 text-zinc-100" />
               </div>
             </a>
-            <div className="iconButton">
+            <div
+              className={
+                currMessenger.favorite ? 'activeIconButton' : 'iconButton'
+              }
+            >
               {' '}
               <StarIcon className="h-6 text-zinc-100" />
             </div>

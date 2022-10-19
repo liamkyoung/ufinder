@@ -5,7 +5,7 @@ import { UserCircleIcon } from '@heroicons/react/24/solid'
 
 const Header: NextPage = () => {
   return (
-    <div className="flex items-center space-x-10 m-5 font-poppins text-black">
+    <div className="flex items-center space-x-10 m-5 font-cartoon text-pageGray">
       <div className="text-2xl font-bold">
         <Link href="/">
           <h1 className="cursor-pointer hover:text-pageOrange">UFinder</h1>

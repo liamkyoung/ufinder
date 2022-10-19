@@ -11,8 +11,12 @@
     @apply rounded-full bg-pageBlue hover:bg-pageOrange cursor-pointer p-2 mr-3 text-center;
   }
 
+  .activeIconButton {
+    @apply rounded-full hover:bg-pageBlue bg-pageOrange cursor-pointer p-2 mr-3 text-center;
+  }
+
   .chatTitle {
-    @apply text-2xl font-poppins font-bold text-pageGray mb-1;
+    @apply text-2xl font-bold text-pageGray mb-1;
   }
 
   .centerFlexCol {
@@ -30,10 +34,9 @@
 
 @layer components {
   .item1 {
-    width: 300px;
-    height: 310px;
-    border: 5px solid #6495ed;
-    margin: -350px 750px;
+    width: 500px;
+    height: 500px;
+    margin: -500px 700px;
   }
   .title-image {
     width: 300px;

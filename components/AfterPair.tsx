@@ -12,8 +12,10 @@ function AfterPair({}: Props) {
   const [randomFriend, setRandomFriend] = useState(Data.friends[randomIndex])
   const dispatch = useDispatch()
   return (
-    <div className="centerFlexCol text-black font-poppins">
-      <h1 className="md:text-4xl text-3xl font-bold">Match Found!</h1>
+    <div className="centerFlexCol text-black font-cartoon">
+      <h1 className="md:text-4xl text-3xl font-bold animate-colorChange">
+        Match Found!
+      </h1>
       {/* Pair Box */}
       <div>
         <div className="border-4 border-pageOrange min-w-max p-5 flex justify-between mt-5 text-lg lg:text-2xl rounded-lg bg-pageOrange bg-opacity-30">

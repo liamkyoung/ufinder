@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaceSmileIcon } from '@heroicons/react/24/outline'
+import { StarIcon } from '@heroicons/react/24/solid'
 import Search from './Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrMessenger } from '../redux/slices/currMessengerSlice'
@@ -15,6 +16,7 @@ type Friend = {
   id: number
   name: string
   online: boolean
+  favorite: boolean
   lastLogin: number
   similarInterests: string[]
   messages: Message[]
@@ -54,6 +56,9 @@ function RecentChats({ friends }: Props) {
             <a className={f.online ? `font-bold` : `italic opacity-70`}>
               {f.name}
             </a>
+            {f.favorite ? (
+              <StarIcon className="h-8 text-yellow-300 ml-1 mr-2" />
+            ) : null}
           </div>
 
           {f.online ? (
@@ -76,7 +81,9 @@ function RecentChats({ friends }: Props) {
   return (
     <div className="max-h-80">
       <Search />
-      <h2 className="chatTitle mt-5">{onlineFriends} Friends Online</h2>
+      <h2 className="chatTitle mt-5 font-cartoon">
+        {onlineFriends} Friends Online
+      </h2>
       <ul className="menu bg-base-100 rounded-box mt-1">{friendNames}</ul>
     </div>
   )
