@@ -6,6 +6,7 @@
       "online": true,
       "lastLogin": 1665604865,
       "favorite": true,
+      "anonymous": false,
       "similarInterests": ["Golf", "Poker"],
       "messages": [
         {
@@ -35,6 +36,7 @@
       "name": "Rachana Agnes",
       "online": true,
       "lastLogin": 1665604865,
+      "anonymous": false,
       "similarInterests": ["Painting", "Action Movies"],
       "messages": [
         {
@@ -65,6 +67,7 @@
       "online": false,
       "favorite": false,
       "lastLogin": 166561115,
+      "anonymous": false,
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
@@ -95,6 +98,7 @@
       "online": false,
       "favorite": true,
       "lastLogin": 160769115,
+      "anonymous": false,
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
@@ -116,6 +120,51 @@
           "id": 4,
           "text": "Cras semper mauris a felis consectetur pulvinar.",
           "timestamp": 1665613213
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Purple Rhino",
+      "lastLogin": 1665604865,
+      "online": true,
+      "anonymous": true,
+      "similarInterests": ["Cars", "Skateboarding", "Chess"],
+      "messages": [
+        {
+          "id": 1,
+          "text": "Hello! How's it going?",
+          "timestamp": 1665604000
+        },
+        {
+          "id": 0,
+          "text": "I'm doing good, how about you?",
+          "timestamp": 1665604800
+        },
+        {
+          "id": 0,
+          "text": "What kind of stuff do you like?",
+          "timestamp": 1665604900
+        },
+        {
+          "id": 1,
+          "text": "I really like swimming. I'm awesome at the 200m",
+          "timestamp": 1665605000
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Jumping Jackolantern",
+      "lastLogin": 1665604865,
+      "online": true,
+      "anonymous": true,
+      "similarInterests": ["Karaoke", "Chess", "Basketball"],
+      "messages": [
+        {
+          "id": 1,
+          "text": "Hey dude! How are you?",
+          "timestamp": 1665604000
         }
       ]
     }

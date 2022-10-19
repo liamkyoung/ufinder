@@ -8,6 +8,7 @@ import {
   MoonIcon,
   QuestionMarkCircleIcon,
   HeartIcon,
+  XCircleIcon,
 } from '@heroicons/react/24/solid'
 import Message from './Message'
 import { useSelector } from 'react-redux'
@@ -26,6 +27,7 @@ type Friend = {
   id: number
   name: string
   online: boolean
+  anonymous: boolean
   lastLogin: number
   similarInterests: string[]
   messages: Message[]
@@ -51,6 +53,7 @@ function AnonymousMessenger({}: Props) {
       id: -1,
       name: '',
       online: false,
+      anonymous: false,
       lastLogin: Date.now(),
       similarInterests: [],
       messages: [],
@@ -77,6 +80,10 @@ function AnonymousMessenger({}: Props) {
       <Modal
         title={`Block ${currMessenger?.name}?`}
         subtitle="User will not be able to send you messages, view your profile, or connect with you once blocked."
+        handler={resetCurrMessenger}
+        id="block-modal"
+        button1={['btn btn-error', 'Block']}
+        button2={['btn btn-info', 'Go Back']}
       />
       <div className="flex">
         {/* Header */}
@@ -104,12 +111,15 @@ function AnonymousMessenger({}: Props) {
             </div>
           </div>
           <div className="flex items-end">
-            <div className="iconButton">
-              <UserPlusIcon className="h-6 text-zinc-100" />
-            </div>
-            <a href="#my-modal-2">
+            {currMessenger.anonymous ? (
               <div className="iconButton">
-                <UserMinusIcon className="h-6 text-zinc-100" />
+                <UserPlusIcon className="h-6 text-zinc-100" />
+              </div>
+            ) : null}
+
+            <a href="#block-modal">
+              <div className="iconButton">
+                <XCircleIcon className="h-6 text-zinc-100" />
               </div>
             </a>
           </div>

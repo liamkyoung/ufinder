@@ -21,10 +21,14 @@ const Chat: NextPage = () => {
       <div className="grid m-5 md:m-16 lg:m-20 2xl:m-24">
         {currMessenger?.id === -1 ? (
           <div className="">
-            <RecentChats friends={Data.friendData} />
+            <RecentChats
+              friends={Data.friendData.filter((friend) => !friend.anonymous)}
+            />
             <div className="pt-2">
               {' '}
-              <AnonymousChats friends={AnonymousData.friendData} />
+              <AnonymousChats
+                friends={Data.friendData.filter((friend) => friend.anonymous)}
+              />
             </div>
           </div>
         ) : (

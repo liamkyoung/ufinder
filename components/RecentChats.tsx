@@ -57,7 +57,7 @@ function RecentChats({ friends }: Props) {
               {f.name}
             </a>
             {f.favorite ? (
-              <StarIcon className="h-8 text-yellow-300 ml-1 mr-2" />
+              <StarIcon className="h-4 text-yellow-300 ml-1 mr-2" />
             ) : null}
           </div>
 
