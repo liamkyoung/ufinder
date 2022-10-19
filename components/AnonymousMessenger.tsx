@@ -18,7 +18,7 @@ import {
   setCurrMessenger,
   resetCurrMessenger,
 } from '../redux/slices/currMessengerSlice'
-import AnonymousData from '../data/anonymous.json'
+import Data from '../data/friends.json'
 import Modal from '../components/Modal'
 
 type Props = {}
@@ -28,6 +28,7 @@ type Friend = {
   name: string
   online: boolean
   anonymous: boolean
+  favorite: boolean
   lastLogin: number
   similarInterests: string[]
   messages: Message[]
@@ -48,11 +49,12 @@ function AnonymousMessenger({}: Props) {
   const currInterests = currMessenger?.similarInterests.join(', ')
 
   const sendMessage = () => {
-    let fileData: Friend[] = AnonymousData.friendData
+    let fileData: Friend[] = Data.friendData
     let foundFriend: Friend = {
       id: -1,
       name: '',
       online: false,
+      favorite: false,
       anonymous: false,
       lastLogin: Date.now(),
       similarInterests: [],

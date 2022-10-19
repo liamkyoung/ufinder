@@ -35,6 +35,7 @@
       "id": 2,
       "name": "Rachana Agnes",
       "online": true,
+      "favorite": true,
       "lastLogin": 1665604865,
       "anonymous": false,
       "similarInterests": ["Painting", "Action Movies"],
@@ -128,6 +129,7 @@
       "name": "Purple Rhino",
       "lastLogin": 1665604865,
       "online": true,
+      "favorite": true,
       "anonymous": true,
       "similarInterests": ["Cars", "Skateboarding", "Chess"],
       "messages": [
@@ -159,6 +161,7 @@
       "lastLogin": 1665604865,
       "online": true,
       "anonymous": true,
+      "favorite": true,
       "similarInterests": ["Karaoke", "Chess", "Basketball"],
       "messages": [
         {

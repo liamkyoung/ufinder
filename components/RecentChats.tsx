@@ -16,6 +16,7 @@ type Friend = {
   id: number
   name: string
   online: boolean
+  anonymous: boolean
   favorite: boolean
   lastLogin: number
   similarInterests: string[]

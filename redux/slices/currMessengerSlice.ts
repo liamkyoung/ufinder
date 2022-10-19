@@ -49,6 +49,7 @@ export const currMessengerSlice = createSlice({
         favorite: false,
         similarInterests: [],
         online: false,
+        anonymous: false,
         lastLogin: Date.now(),
         messages: [],
       }
