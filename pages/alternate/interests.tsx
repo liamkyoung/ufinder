@@ -4,7 +4,6 @@ import InterestList from '../../components/InterestList'
 import HeadMetaData from '../../components/HeadMetaData'
 import Header from '../../components/Header'
 import Link from 'next/link'
-import InterestButton from '../../components/InterestButton'
 
 const Interests: NextPage = () => {
   return (
@@ -24,9 +23,6 @@ const Interests: NextPage = () => {
       </div>
 
       <InterestList />
-      <div className="fixed bottom-0 w-full text-gray-800 text-bold font-cartoon">
-        <InterestButton link="/pair" />
-      </div>
     </div>
   )
 }

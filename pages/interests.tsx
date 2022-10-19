@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import Header from '../components/Header'
 import HeadMetaData from '../components/HeadMetaData'
 import InterestButton from '../components/InterestButton'
 import Link from 'next/link'
+import Data from '../data/interests.json'
 
 const Interests: NextPage = () => {
+  const [interests, setInterests] = useState(new Set<string>())
+
+  const updateItems = (item) => {
+    if (!interests.has(item)) setInterests((prev) => new Set([...prev, item]))
+    else setInterests((prev) => new Set([...prev].filter((x) => x !== item)))
+    console.log(interests)
+  }
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Interests" />
@@ -18,9 +26,24 @@ const Interests: NextPage = () => {
           </h1>
         </div>
       </div>
+      <div className="mx-16 pb-24">
+        <div className="grid text-black text-2xl grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {Data.interests.map((item, i) => (
+            <button
+              key={i}
+              className={`btn m-5 font-bold ${
+                !interests.has(item) ? 'btn-accent' : 'btn-warning'
+              }`}
+              onClick={() => updateItems(item)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="fixed bottom-0 w-full">
-        <InterestButton link="/pair" />
+        {interests.size >= 3 ? <InterestButton link="/pair" /> : null}
       </div>
     </div>
   )
