@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { FaceSmileIcon } from '@heroicons/react/24/outline'
-import { StarIcon } from '@heroicons/react/24/solid'
 import Search from './Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrMessenger } from '../redux/slices/currMessengerSlice'
@@ -27,7 +26,7 @@ type Props = {
   friends: Friend[]
 }
 
-function RecentChats({ friends }: Props) {
+function AnonymousChats({ friends }: Props) {
   const currMessenger = useSelector(
     (state: RootState) => state.currentMessenger.value
   )
@@ -43,7 +42,7 @@ function RecentChats({ friends }: Props) {
         key={i}
         className={
           f.online
-            ? 'border-l-4 border-b-0 border-pageGreen'
+            ? 'border-l-4 border-b-0 border-pageOrange'
             : 'border-l-4 border-b-0 border-red-700'
         }
         value={f.name}
@@ -57,9 +56,6 @@ function RecentChats({ friends }: Props) {
             <a className={f.online ? `font-bold` : `italic opacity-70`}>
               {f.name}
             </a>
-            {f.favorite ? (
-              <StarIcon className="h-4 text-yellow-300 ml-1 mr-2" />
-            ) : null}
           </div>
 
           {f.online ? (
@@ -81,13 +77,10 @@ function RecentChats({ friends }: Props) {
 
   return (
     <div className="max-h-80">
-      <Search />
-      <h2 className="chatTitle mt-5 font-cartoon">
-        {onlineFriends} Friends Online
-      </h2>
+      <h2 className="chatTitle mt-5">{onlineFriends} Anonymous Messages</h2>
       <ul className="menu bg-base-100 rounded-box mt-1">{friendNames}</ul>
     </div>
   )
 }
 
-export default RecentChats
+export default AnonymousChats

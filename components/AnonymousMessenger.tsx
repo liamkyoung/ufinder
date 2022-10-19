@@ -6,7 +6,9 @@ import {
   UserMinusIcon,
   StarIcon,
   MoonIcon,
-  NoSymbolIcon,
+  QuestionMarkCircleIcon,
+  HeartIcon,
+  XCircleIcon,
 } from '@heroicons/react/24/solid'
 import Message from './Message'
 import { useSelector } from 'react-redux'
@@ -16,7 +18,6 @@ import {
   setCurrMessenger,
   resetCurrMessenger,
 } from '../redux/slices/currMessengerSlice'
-import fs from 'fs'
 import Data from '../data/friends.json'
 import Modal from '../components/Modal'
 
@@ -39,24 +40,24 @@ type Message = {
   timestamp: number
 }
 
-function MessengerActive({}: Props) {
+function AnonymousMessenger({}: Props) {
   const currMessenger = useSelector(
     (state: RootState) => state.currentMessenger.value
   )
   const dispatch = useDispatch()
   const [currMessage, setMessage] = useState('')
-  const [currFavorite, setFavorite] = useState(currMessenger.favorite)
+  const currInterests = currMessenger?.similarInterests.join(', ')
 
   const sendMessage = () => {
     let fileData: Friend[] = Data.friendData
     let foundFriend: Friend = {
       id: -1,
       name: '',
-      favorite: false,
-      similarInterests: [],
       online: false,
+      favorite: false,
       anonymous: false,
       lastLogin: Date.now(),
+      similarInterests: [],
       messages: [],
     }
 
@@ -79,14 +80,6 @@ function MessengerActive({}: Props) {
   return (
     <div className="w-full min-h-max bg-pageGray rounded-xl shadow-sm">
       <Modal
-        title={`Add ${currMessenger?.name} as a friend?`}
-        subtitle={''}
-        handler={resetCurrMessenger}
-        id="add-friend-modal"
-        button1={['btn btn-success', 'Add to Friend List']}
-        button2={['btn btn-error', 'Exit']}
-      />
-      <Modal
         title={`Block ${currMessenger?.name}?`}
         subtitle="User will not be able to send you messages, view your profile, or connect with you once blocked."
         handler={resetCurrMessenger}
@@ -94,7 +87,6 @@ function MessengerActive({}: Props) {
         button1={['btn btn-error', 'Block']}
         button2={['btn btn-info', 'Go Back']}
       />
-
       <div className="flex">
         {/* Header */}
         <div
@@ -105,37 +97,33 @@ function MessengerActive({}: Props) {
             className="h-8 text-zinc-100 cursor-pointer hover:text-zinc-400"
             onClick={() => dispatch(resetCurrMessenger())}
           />
-          <div className="flex items-center">
-            {currMessenger?.online ? (
-              <FaceSmileIcon className={`h-10  pr-2 text-pageGreen`} />
-            ) : (
-              <MoonIcon className={`h-6  pr-2 text-pageBlue`} />
-            )}
-
-            <h1 className="text-zinc-100 font-bold text-xl">
-              {currMessenger?.name}
-            </h1>
+          <div className="flex items-center flex-1 justify-center">
+            <QuestionMarkCircleIcon className="h-12 text-pageGreen" />
+            <div className="pl-5">
+              <h1 className="text-zinc-100 font-bold text-xl">
+                {currMessenger?.name}
+              </h1>
+              <div className="flex items-center">
+                <HeartIcon className="h-4 text-red-600" />
+                <h3 className="text-zinc-100 text-sm italic mx-2">
+                  {currInterests}
+                </h3>
+                <HeartIcon className="h-4 text-red-600" />
+              </div>
+            </div>
           </div>
-          <div className="flex">
-            <a href="#add-friend-modal">
+          <div className="flex items-end">
+            {currMessenger.anonymous ? (
               <div className="iconButton">
                 <UserPlusIcon className="h-6 text-zinc-100" />
               </div>
-            </a>
+            ) : null}
 
             <a href="#block-modal">
               <div className="iconButton">
-                <NoSymbolIcon className="h-6 text-zinc-100" />
+                <XCircleIcon className="h-6 text-zinc-100" />
               </div>
             </a>
-            <div
-              className={
-                currMessenger.favorite ? 'activeIconButton' : 'iconButton'
-              }
-            >
-              {' '}
-              <StarIcon className="h-6 text-zinc-100" />
-            </div>
           </div>
         </div>
       </div>
@@ -159,7 +147,7 @@ function MessengerActive({}: Props) {
           <div className="input-group w-full">
             <input
               type="text"
-              placeholder=""
+              placeholder="Send message"
               className="input input-bordered flex-1"
               onChange={(e) => setMessage(e.target.value)}
               value={currMessage}
@@ -174,4 +162,4 @@ function MessengerActive({}: Props) {
   )
 }
 
-export default MessengerActive
+export default AnonymousMessenger
