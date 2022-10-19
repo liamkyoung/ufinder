@@ -28,7 +28,7 @@ function BeforePair({}: Props) {
       </div>
 
       <button
-        className="btn btn-info btn-lg mt-5 text-zinc-100 font-normal"
+        className="btn btn-warning btn-lg mt-5  font-normal"
         onClick={() => dispatch(increment())}
       >
         Click to Find Pair!

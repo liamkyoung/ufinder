@@ -3,13 +3,18 @@ import React from 'react'
 
 type Props = {
   link: string
+  active: boolean
 }
 
-function InterestButton({ link }: Props) {
+function InterestButton({ link, active }: Props) {
   return (
     <>
       <Link href={link}>
-        <button className="btn btn-warning bottom-0 my-8 mx-24 text-2xl float-right tracking-wide focus:outline-none text-gray-800 font-cartoon">
+        <button
+          className={`btn ${
+            active ? 'btn-warning' : 'btn-disabled'
+          } bottom-0 my-8 mx-24 text-2xl float-right tracking-wide focus:outline-none text-gray-800 font-cartoon`}
+        >
           Continue
           <svg
             xmlns="http://www.w3.org/2000/svg"

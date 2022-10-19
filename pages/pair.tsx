@@ -18,7 +18,7 @@ const Pair: NextPage = () => {
     } else if (pairState === 1) {
       setScreen(<DuringPair />)
     } else if (pairState === 2) {
-      setScreen(<AfterPair />)
+      setScreen(<AfterPair link="/chat" />)
     }
   }, [pairState])
 

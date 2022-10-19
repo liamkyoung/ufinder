@@ -5,14 +5,16 @@ import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { reset } from '../redux/slices/pairStateSlice'
 
-type Props = {}
+type Props = {
+  link: string
+}
 
-function AfterPair({}: Props) {
+function AfterPair({ link }: Props) {
   const randomIndex = Math.floor(Math.random() * Data.friends.length)
   const [randomFriend, setRandomFriend] = useState(Data.friends[randomIndex])
   const dispatch = useDispatch()
   return (
-    <div className="centerFlexCol text-black font-cartoon">
+    <div className="centerFlexCol text-black font-cartoon -mt-5">
       <h1 className="md:text-4xl text-3xl font-bold animate-colorChange">
         Match Found!
       </h1>
@@ -38,21 +40,21 @@ function AfterPair({}: Props) {
       </div>
 
       <div className="p-5 flex justify-center">
-        <Link href="/chat">
-          <button className="btn btn-info mr-1 md:mr-5 xl:mr-32">
+        <Link href={link}>
+          <button className="btn btn-info mr-1 md:mr-5 xl:mr-32 btn-lg">
             Click to Chat
           </button>
         </Link>
 
         <Link href="/profile">
-          <button className="btn btn-info ml-1 md:ml-5 xl:ml-32">
+          <button className="btn btn-info ml-1 md:ml-5 xl:ml-32 btn-lg">
             View Profile
           </button>
         </Link>
       </div>
 
       <button
-        className="btn btn-success text-zinc-100 font-normal"
+        className="btn btn-warning font-normal"
         onClick={() => dispatch(reset())}
       >
         Find a new pair

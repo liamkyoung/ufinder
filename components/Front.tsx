@@ -20,7 +20,7 @@ const Front: NextPage = ({ link }: Props) => {
         <Link href={link}>
           <button
             type="button"
-            className="btn btn-lg download-button btn-warning font-cartoon"
+            className="btn btn-lg download-button btn-warning font-bold"
           >
             Click here to start &gt;{' '}
           </button>
