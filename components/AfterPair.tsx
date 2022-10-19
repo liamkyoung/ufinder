@@ -52,7 +52,7 @@ function AfterPair({}: Props) {
       </div>
 
       <button
-        className="btn btn-neutral text-zinc-100"
+        className="btn btn-success text-zinc-100 font-normal"
         onClick={() => dispatch(reset())}
       >
         Find a new pair
