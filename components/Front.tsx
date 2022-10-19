@@ -13,7 +13,7 @@ const Front: NextPage = () => {
         <h2 className="font-cartoon text-pageGray italic -mt-3">
           Meet Gators Just Like You!
         </h2>
-        <Link href="/pair">
+        <Link href="/interests">
           <button
             type="button"
             className="btn btn-lg download-button btn-warning font-cartoon"
