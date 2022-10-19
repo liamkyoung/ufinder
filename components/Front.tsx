@@ -8,12 +8,14 @@ const Front: NextPage = () => {
       <div className="col-lg-6 alltext">
         <h1 className="big-heading">Gainesville&apos;s Best Friend Finder.</h1>
         <h2>Meet Gators Just Like You!</h2>
-        <button
-          type="button"
-          className="btn btn-outline btn-lg download-button"
-        >
-          Click here to start &gt;{' '}
-        </button>
+        <Link href="/interests">
+          <button
+            type="button"
+            className="btn btn-outline btn-lg download-button"
+          >
+            Click here to start &gt;{' '}
+          </button>
+        </Link>
       </div>
       <div className="item1 rounded">
         <img
