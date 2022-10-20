@@ -25,7 +25,7 @@ const Pair: NextPage = () => {
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Pair" />
-      <Header />
+      <Header primary={true} />
       {currScreen}
     </div>
   )

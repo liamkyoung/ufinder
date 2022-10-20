@@ -11,7 +11,7 @@ const Chat: NextPage = () => {
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Chat" />
-      <Header />
+      <Header primary={true} />
       <div className="grid grid-cols-3 grid-rows-2 min-w-min">
         <div className="col-span-full md:col-span-1 p-5 md:p-10 md:col-start-1 row-start-1">
           <h1 className="chatTitle font-cartoon">Recent Chats</h1>

@@ -8,7 +8,7 @@ const Meet: NextPage = () => {
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Meet" />
-      <Header />
+      <Header primary={false} />
       <Meeting2 />
     </div>
   )

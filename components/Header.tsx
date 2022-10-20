@@ -3,17 +3,21 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 
-const Header: NextPage = () => {
+type Props = {
+  primary: boolean
+}
+
+const Header = ({ primary }: Props) => {
   return (
     <div className="flex items-center space-x-10 m-5 font-cartoon text-gray-800">
       <div className="text-2xl font-bold">
-        <Link href="/">
+        <Link href={primary ? '/' : '/alternate'}>
           <h1 className="cursor-pointer hover:text-pageOrange">UFinder</h1>
         </Link>
       </div>
 
       <div className="flex space-x-5 items-center flex-grow">
-        <Link href="/chat">
+        <Link href={primary ? '/chat' : '/alternate/chat'}>
           {/* <div className="indicator">
             <span className="indicator-item badge badge-success animate-pulse scale-50 translate-x-3"></span>
             <h1 className="hover:font-bold cursor-pointer">Chat</h1>
@@ -21,19 +25,18 @@ const Header: NextPage = () => {
           <h1 className="hover:font-bold cursor-pointer">Chat</h1>
         </Link>
 
-        <Link href="/meet">
+        <Link href={primary ? '/meet' : '/alternate/meet'}>
           <h1 className="hover:font-bold cursor-pointer">Meet</h1>
         </Link>
 
-        <Link href="/pair">
+        <Link href={primary ? '/pair' : '/alternate/pair'}>
           <h1 className="hover:font-bold cursor-pointer">Pair</h1>
         </Link>
       </div>
       <div className="flex items-center mr-5">
-        <Link href="/profile">
+        <Link href={primary ? '/profile' : '/alternate/profile'}>
           <UserCircleIcon className="h-10 cursor-pointer" />
         </Link>
-
         <h1 className="ml-3 hover:font-bold cursor-pointer">Logout</h1>
       </div>
     </div>

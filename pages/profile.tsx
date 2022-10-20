@@ -9,7 +9,7 @@ const Profile: NextPage = () => {
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Profile" />
-      <Header />
+      <Header primary={true} />
       <div className="flex justify-center items-center mt-8">
         <ProfileInfo
           name={Data.user.name}

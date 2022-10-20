@@ -9,7 +9,7 @@ const Interests: NextPage = () => {
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Alt Interests" />
-      <Header />
+      <Header primary={false} />
 
       <div className="grid place-items-center min-w-min">
         <div className="col-span-full md:col-span-1 p-5 md:p-10 md:col-start-1 row-start-1 text-gray-800 font-cartoon">

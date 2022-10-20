@@ -16,7 +16,7 @@ const Chat: NextPage = () => {
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Alternate Chat" />
-      <Header />
+      <Header primary={false} />
       <div className="grid m-5 md:m-16 lg:m-20 2xl:m-24">
         {currMessenger?.id === -1 ? (
           <div className="">
