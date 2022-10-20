@@ -1,18 +1,23 @@
 import React, { useState } from 'react'
 import { UserIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/solid'
-import Data from '../data/pairdata.json'
+import Data from '../data/friends.json'
+import AnonData from '../data/friendsAnon.json'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { reset } from '../redux/slices/pairStateSlice'
+import { setCurrMessenger } from '../redux/slices/currMessengerSlice'
 
 type Props = {
+  primary: boolean
   link: string
 }
 
-function AfterPair({ link }: Props) {
-  const randomIndex = Math.floor(Math.random() * Data.friends.length)
-  const [randomFriend, setRandomFriend] = useState(Data.friends[randomIndex])
+function AfterPair({ primary, link }: Props) {
+  const data = primary ? Data.friendData : AnonData.friendData
+  const randomIndex = Math.floor(Math.random() * data.length)
+  const [randomFriend, setRandomFriend] = useState(data[randomIndex])
   const dispatch = useDispatch()
+
   return (
     <div className="centerFlexCol text-black font-cartoon -mt-5">
       <h1 className="md:text-4xl text-3xl font-bold animate-colorChange">
@@ -41,7 +46,10 @@ function AfterPair({ link }: Props) {
 
       <div className="p-5 flex justify-center">
         <Link href={link}>
-          <button className="btn btn-info mr-1 md:mr-5 xl:mr-32 btn-lg">
+          <button
+            className="btn btn-info mr-1 md:mr-5 xl:mr-32 btn-lg"
+            onClick={() => dispatch(setCurrMessenger(randomFriend))}
+          >
             Click to Chat
           </button>
         </Link>
