@@ -14,14 +14,18 @@ function InterestList({}: Props) {
   )
   const [interests, setInterests] = useState(new Set<string>())
 
-  const updateItems = (item) => {
-    if (!interests.has(item)) setInterests((prev) => new Set([...prev, item]))
-    else setInterests((prev) => new Set([...prev].filter((x) => x !== item)))
+  const updateItems = (item: string) => {
+    if (!interests.has(item))
+      setInterests((prev) => new Set([...Array.from(prev), item]))
+    else
+      setInterests(
+        (prev) => new Set([...Array.from(prev)].filter((x) => x !== item))
+      )
     console.log(interests)
   }
 
   return (
-    <div className="flex font-cartoon text-xl justify-center align-center min-h-max pb-10">
+    <div className="flex font-cartoon text-xl justify-center items-center min-h-max pb-10">
       <div className="text-right pr-20">
         {' '}
         <div>

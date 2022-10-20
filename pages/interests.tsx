@@ -9,9 +9,13 @@ import Data from '../data/interests.json'
 const Interests: NextPage = () => {
   const [interests, setInterests] = useState(new Set<string>())
 
-  const updateItems = (item) => {
-    if (!interests.has(item)) setInterests((prev) => new Set([...prev, item]))
-    else setInterests((prev) => new Set([...prev].filter((x) => x !== item)))
+  const updateItems = (item: string) => {
+    if (!interests.has(item))
+      setInterests((prev) => new Set([...Array.from(prev), item]))
+    else
+      setInterests(
+        (prev) => new Set([...Array.from(prev)].filter((x) => x !== item))
+      )
     console.log(interests)
   }
   return (
