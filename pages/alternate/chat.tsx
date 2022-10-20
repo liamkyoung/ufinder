@@ -4,6 +4,7 @@ import AnonymousMessenger from '../../components/AnonymousMessenger'
 import Header from '../../components/Header'
 import HeadMetaData from '../../components/HeadMetaData'
 import RecentChats from '../../components/RecentChats'
+import AnonData from '../../data/friendsAnon.json'
 import Data from '../../data/friends.json'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
@@ -26,7 +27,9 @@ const Chat: NextPage = () => {
             <div className="pt-2">
               {' '}
               <AnonymousChats
-                friends={Data.friendData.filter((friend) => friend.anonymous)}
+                friends={AnonData.friendData.filter(
+                  (friend) => friend.anonymous
+                )}
               />
             </div>
           </div>

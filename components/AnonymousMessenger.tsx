@@ -98,7 +98,11 @@ function AnonymousMessenger({}: Props) {
             onClick={() => dispatch(resetCurrMessenger())}
           />
           <div className="flex items-center flex-1 justify-center">
-            <QuestionMarkCircleIcon className="h-12 text-pageGreen" />
+            <QuestionMarkCircleIcon
+              className={`h-12 ${
+                currMessenger.online ? 'text-pageGreen' : 'text-gray-800'
+              }`}
+            />
             <div className="pl-5">
               <h1 className="text-zinc-100 font-bold text-xl">
                 {currMessenger?.name}

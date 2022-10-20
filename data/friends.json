@@ -123,53 +123,6 @@
           "timestamp": 1665613213
         }
       ]
-    },
-    {
-      "id": 5,
-      "name": "Purple Rhino",
-      "lastLogin": 1665604865,
-      "online": true,
-      "favorite": true,
-      "anonymous": true,
-      "similarInterests": ["Cars", "Skateboarding", "Chess"],
-      "messages": [
-        {
-          "id": 1,
-          "text": "Hello! How's it going?",
-          "timestamp": 1665604000
-        },
-        {
-          "id": 0,
-          "text": "I'm doing good, how about you?",
-          "timestamp": 1665604800
-        },
-        {
-          "id": 0,
-          "text": "What kind of stuff do you like?",
-          "timestamp": 1665604900
-        },
-        {
-          "id": 1,
-          "text": "I really like swimming. I'm awesome at the 200m",
-          "timestamp": 1665605000
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Jumping Jackolantern",
-      "lastLogin": 1665604865,
-      "online": true,
-      "anonymous": true,
-      "favorite": true,
-      "similarInterests": ["Karaoke", "Chess", "Basketball"],
-      "messages": [
-        {
-          "id": 1,
-          "text": "Hey dude! How are you?",
-          "timestamp": 1665604000
-        }
-      ]
     }
   ]
 }
