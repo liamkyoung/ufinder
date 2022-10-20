@@ -35,7 +35,7 @@ function RecentChats({ friends }: Props) {
   const dispatch = useDispatch()
   let onlineFriends = 0
   const friendNames = friends?.map((f, i) => {
-    if (search !== '' && !f.name.includes(search)) return
+    if (search !== '' && !f.name.toLowerCase().includes(search.toLowerCase())) return
 
     const offlineHours = new Date(f.lastLogin).getHours()
     return (
