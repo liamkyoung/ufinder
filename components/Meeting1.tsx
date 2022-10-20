@@ -23,11 +23,11 @@ const Meeting1: NextPage = () => {
 
     <div className="container" id="features">
         <div className="mainText col-lg-6">
-            <h2>Meet Each Other!</h2>
+            <h2 className='font-cartoon'>Meet Each Other!</h2>
         </div>
 
         <div>
-            <input type="text" placeholder="Type here" className="conversationBox input input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="Search..." className="conversationBox input input-bordered w-full max-w-xs" />
         </div>
 
       <div className="item3 rounded bg-[#f6f9fa]">
