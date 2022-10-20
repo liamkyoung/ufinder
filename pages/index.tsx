@@ -7,7 +7,7 @@ import Front from '../components/Front'
 
 const Home: NextPage = () => {
   return (
-    <div className="page bg-gradient-to-r from-green-200 to-cyan-200 overflow-hidden">
+    <div className="page">
       <HeadMetaData title="UFinder | Home" />
       <Header />
       <Front />
