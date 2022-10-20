@@ -30,6 +30,10 @@
   .scaleSmallIcons {
     @apply h-12 md:h-24 lg:h-48 xl:h-64;
   }
+
+  .profileButton {
+    @apply h-8 mr-2 cursor-pointer;
+  }
 }
 
 @layer components {

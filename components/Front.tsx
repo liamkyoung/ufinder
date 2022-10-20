@@ -3,7 +3,11 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Front: NextPage = () => {
+type Props = {
+  link: string
+}
+
+const Front = ({ link }: Props) => {
   return (
     <div className="row">
       <div className="col-lg-6 alltext text-gray-800">
@@ -13,10 +17,10 @@ const Front: NextPage = () => {
         <h2 className="font-cartoon text-pageGray italic -mt-3">
           Meet Gators Just Like You!
         </h2>
-        <Link href="/interests">
+        <Link href={link}>
           <button
             type="button"
-            className="btn btn-lg download-button btn-warning font-cartoon"
+            className="btn btn-lg download-button btn-warning font-bold"
           >
             Click here to start &gt;{' '}
           </button>

@@ -42,7 +42,7 @@ function MessengerInactive({}: Props) {
     <div className="w-full min-h-max bg-pageGray font-cartoon rounded-xl shadow-sm h-80">
       <div className="flex justify-center items-center text-center flex-1 h-full">
         <h1
-          className="text-2xl text-white font-bold btn btn-success"
+          className="text-2xl text-white font-normal btn btn-success"
           onClick={() => dispatch(setCurrMessenger(randomFriend))}
         >
           Start Chatting!

@@ -1,0 +1,8 @@
+{
+  "user": {
+    "name": "Example Name",
+    "age": 21,
+    "similarInterests": ["Fishing", "Football", "Soccer"],
+    "otherInterests": ["Card Games", "Board Games", "Eating Out", "Running"]
+  }
+}
