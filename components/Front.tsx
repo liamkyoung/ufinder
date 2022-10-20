@@ -20,7 +20,7 @@ const Front = ({ link }: Props) => {
         <Link href={link}>
           <button
             type="button"
-            className="btn btn-lg download-button btn-warning font-bold"
+            className="btn btn-lg download-button btn-warning font-bold font-poppins"
           >
             Click here to start &gt;{' '}
           </button>

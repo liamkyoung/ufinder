@@ -35,7 +35,7 @@ const Interests: NextPage = () => {
           {Data.interests.map((item, i) => (
             <button
               key={i}
-              className={`btn m-5 font-bold ${
+              className={`btn m-5 font-bold font-poppins ${
                 !interests.has(item) ? 'btn-accent' : 'btn-warning'
               }`}
               onClick={() => updateItems(item)}
