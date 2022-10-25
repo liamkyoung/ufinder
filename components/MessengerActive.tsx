@@ -32,6 +32,7 @@ type Friend = {
   lastLogin: number
   icon: string
   mood: string
+  age: number
   similarInterests: string[]
   messages: Message[]
 }
@@ -55,11 +56,14 @@ function MessengerActive({}: Props) {
     let foundFriend: Friend = {
       id: -1,
       name: '',
-      favorite: false,
-      similarInterests: [],
       online: false,
+      favorite: false,
+      icon: '',
+      mood: 'happy',
+      age: 20,
       anonymous: false,
       lastLogin: Date.now(),
+      similarInterests: [],
       messages: [],
     }
 

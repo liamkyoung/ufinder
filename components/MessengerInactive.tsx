@@ -14,6 +14,7 @@ import { setCurrMessenger } from '../redux/slices/currMessengerSlice'
 import Data from '../data/friends.json'
 
 type Props = {}
+
 type Friend = {
   id: number
   name: string
@@ -21,6 +22,9 @@ type Friend = {
   anonymous: boolean
   favorite: boolean
   lastLogin: number
+  icon: string
+  mood: string
+  age: number
   similarInterests: string[]
   messages: Message[]
 }

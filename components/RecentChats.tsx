@@ -6,12 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setCurrMessenger } from '../redux/slices/currMessengerSlice'
 import type { RootState } from '../redux/store'
 
-type Message = {
-  id: number
-  text: string
-  timestamp: number
-}
-
 type Friend = {
   id: number
   name: string
@@ -19,8 +13,17 @@ type Friend = {
   anonymous: boolean
   favorite: boolean
   lastLogin: number
+  icon: string
+  mood: string
+  age: number
   similarInterests: string[]
   messages: Message[]
+}
+
+type Message = {
+  id: number
+  text: string
+  timestamp: number
 }
 
 type Props = {
@@ -35,7 +38,8 @@ function RecentChats({ friends }: Props) {
   const dispatch = useDispatch()
   let onlineFriends = 0
   const friendNames = friends?.map((f, i) => {
-    if (search !== '' && !f.name.toLowerCase().includes(search.toLowerCase())) return
+    if (search !== '' && !f.name.toLowerCase().includes(search.toLowerCase()))
+      return
 
     const offlineHours = new Date(f.lastLogin).getHours()
     return (

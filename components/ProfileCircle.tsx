@@ -15,6 +15,9 @@ type Friend = {
   anonymous: boolean
   favorite: boolean
   lastLogin: number
+  icon: string
+  mood: string
+  age: number
   similarInterests: string[]
   messages: Message[]
 }
