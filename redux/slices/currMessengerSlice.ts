@@ -29,11 +29,14 @@ const initialState: currMessengerState = {
   value: {
     id: -1,
     name: '',
-    favorite: false,
-    similarInterests: [],
     online: false,
+    favorite: false,
+    icon: '',
+    mood: 'happy',
+    age: 20,
     anonymous: false,
     lastLogin: Date.now(),
+    similarInterests: [],
     messages: [],
   },
 }
@@ -49,11 +52,14 @@ export const currMessengerSlice = createSlice({
       state.value = {
         id: -1,
         name: '',
-        favorite: false,
-        similarInterests: [],
         online: false,
+        favorite: false,
+        icon: '',
+        mood: 'happy',
+        age: 20,
         anonymous: false,
         lastLogin: Date.now(),
+        similarInterests: [],
         messages: [],
       }
     },

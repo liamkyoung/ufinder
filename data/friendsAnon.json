@@ -8,6 +8,7 @@
       "favorite": true,
       "anonymous": true,
       "icon": "icon",
+      "age": 20,
       "mood": "happy",
       "similarInterests": ["Cars", "Skateboarding", "Chess"],
       "messages": [
@@ -42,6 +43,7 @@
       "favorite": true,
       "icon": "icon",
       "mood": "happy",
+      "age": 20,
       "similarInterests": ["Karaoke", "Chess", "Basketball"],
       "messages": [
         {
