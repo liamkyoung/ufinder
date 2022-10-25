@@ -7,6 +7,9 @@
       "lastLogin": 1665604865,
       "favorite": true,
       "anonymous": false,
+      "age": 19,
+      "icon": "icon",
+      "mood": "happy",
       "similarInterests": ["Golf", "Poker"],
       "messages": [
         {
@@ -38,6 +41,9 @@
       "favorite": true,
       "lastLogin": 1665604865,
       "anonymous": false,
+      "age": 22,
+      "icon": "icon",
+      "mood": "happy",
       "similarInterests": ["Painting", "Action Movies"],
       "messages": [
         {
@@ -69,6 +75,9 @@
       "favorite": false,
       "lastLogin": 166561115,
       "anonymous": false,
+      "age": 21,
+      "icon": "icon",
+      "mood": "sad",
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
@@ -100,6 +109,9 @@
       "favorite": true,
       "lastLogin": 160769115,
       "anonymous": false,
+      "age": 25,
+      "icon": "icon",
+      "mood": "happy",
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
