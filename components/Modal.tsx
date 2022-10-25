@@ -17,7 +17,7 @@ function Modal({ title, subtitle, handler, id, button1, button2 }: Props) {
     <div>
       <div className="modal" id={id}>
         <div className="modal-box">
-          <h3 className="font-bold text-lg">{title}</h3>
+          <h3 className="font-bold text-lg text-left text-zinc-100">{title}</h3>
           <p className="py-4">{subtitle}</p>
           <div className="modal-action">
             <a href="#" onClick={() => dispatch(handler())}>

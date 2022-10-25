@@ -24,8 +24,10 @@ const Interests: NextPage = () => {
       <Header primary={true} />
       <div className="grid place-items-center min-w-min text-gray-800 font-cartoon">
         <div className="col-span-full md:col-span-1 p-5 md:p-10 md:col-start-1 row-start-1">
-          <h2 className="font-bold interestTitle1">What are your interests?</h2>
-          <h1 className="text-lg interestTitle2">
+          <h2 className="font-bold interestTitle1 text-black">
+            What are your interests?
+          </h2>
+          <h1 className="text-lg interestTitle2 text-gray-800">
             Pick at least 3 to get started.
           </h1>
         </div>

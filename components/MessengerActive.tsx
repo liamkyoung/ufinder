@@ -7,6 +7,7 @@ import {
   StarIcon,
   MoonIcon,
   NoSymbolIcon,
+  HeartIcon,
 } from '@heroicons/react/24/solid'
 import Message from './Message'
 import { useSelector } from 'react-redux'
@@ -111,10 +112,18 @@ function MessengerActive({}: Props) {
             ) : (
               <MoonIcon className={`h-6  pr-2 text-pageBlue`} />
             )}
-
-            <h1 className="text-zinc-100 font-bold text-xl">
-              {currMessenger?.name}
-            </h1>
+            <div>
+              <h1 className="text-zinc-100 font-bold text-xl text-center">
+                {currMessenger?.name}
+              </h1>
+              <div className="flex items-center">
+                <HeartIcon className="h-4 text-red-600 pl-2" />
+                <h1 className="text-sm text-zinc-100 italic">
+                  {currMessenger.similarInterests.join(', ')}
+                </h1>
+                <HeartIcon className="h-4 text-red-600" />
+              </div>
+            </div>
           </div>
           <div className="flex">
             <a href="#add-friend-modal">

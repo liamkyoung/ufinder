@@ -87,6 +87,14 @@ function AnonymousMessenger({}: Props) {
         button1={['btn btn-error', 'Block']}
         button2={['btn btn-info', 'Go Back']}
       />
+      <Modal
+        title={`Add ${currMessenger?.name} as a friend?`}
+        subtitle={`You will exchange information like name and age with ${currMessenger?.name}, and they will appear on your friend's list.`}
+        handler={resetCurrMessenger}
+        id="add-modal"
+        button1={['btn btn-success', 'Add Friend']}
+        button2={['btn btn-info', 'Go Back']}
+      />
       <div className="flex">
         {/* Header */}
         <div
@@ -118,9 +126,11 @@ function AnonymousMessenger({}: Props) {
           </div>
           <div className="flex items-end">
             {currMessenger.anonymous ? (
-              <div className="iconButton">
-                <UserPlusIcon className="h-6 text-zinc-100" />
-              </div>
+              <a href="#add-modal">
+                <div className="iconButton">
+                  <UserPlusIcon className="h-6 text-zinc-100" />
+                </div>
+              </a>
             ) : null}
 
             <a href="#block-modal">
