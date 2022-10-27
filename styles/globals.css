@@ -83,6 +83,11 @@
     border: 5px solid #6495ed;
   }
 
+  .conversationBox1 {
+    border: 5px solid #6495ed;
+    margin: 10px 540px;
+  }
+
   .mainText {
     width: 310px;
     height: 70px;

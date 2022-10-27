@@ -10,17 +10,17 @@ const Meeting2: NextPage = () => {
   const [search, setSearch] = useState('')
   return (
     <div className="container" id="features">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center ml-44">
         <h2 className="font-cartoon text-center pb-5">Meet Each Other!</h2>
         <div>
           <input
             type="text"
             placeholder="Search..."
-            className="conversationBox input input-bordered w-full"
+            className="conversationBox input input-bordered w-full max-w-xs"
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="carousel carousel-center max-w-2xl p-10 space-x-10 bg-neutral rounded-box mt-10">
+        <div className="carousel carousel-center max-w-2xl p-10 space-x-10 bg-gradient-to-r from-cyan-200 to-slate-200 rounded-box mt-10">
           {Data.friendData.map((friend, i) => {
             if (
               search === '' ||

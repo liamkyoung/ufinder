@@ -2,7 +2,7 @@
   "friendData": [
     {
       "id": 1,
-      "name": "Zakaria Maria",
+      "name": "Zakaria Leo",
       "online": true,
       "lastLogin": 1665604865,
       "favorite": true,
@@ -10,7 +10,7 @@
       "age": 19,
       "icon": "icon",
       "mood": "happy",
-      "similarInterests": ["Golf", "Poker"],
+      "similarInterests": ["Golf", "Poker", "Reading", "Soccer"],
       "messages": [
         {
           "id": 1,

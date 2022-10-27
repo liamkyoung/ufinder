@@ -29,7 +29,7 @@ const Meeting1: NextPage = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="conversationBox input input-bordered w-full max-w-xs"
+          className="conversationBox1 input input-bordered w-full max-w-xs"
         />
       </div>
 
