@@ -10,7 +10,7 @@
       "age": 19,
       "icon": "icon",
       "mood": "happy",
-      "similarInterests": ["Golf", "Poker"],
+      "similarInterests": ["Golf", "Poker", "Reading", "Soccer"],
       "messages": [
         {
           "id": 1,
