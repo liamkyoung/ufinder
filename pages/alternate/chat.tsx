@@ -11,6 +11,7 @@ import { RootState } from '../../redux/store'
 import AnonymousChats from '../../components/AnonymousChats'
 import HobbyCircle from '../../components/HobbyCircle'
 import MessengerInactive from '../../components/MessengerInactive'
+import UserData from '../../data/user.json'
 
 const Chat: NextPage = () => {
   const currMessenger = useSelector(
@@ -31,30 +32,18 @@ const Chat: NextPage = () => {
               Your Communities
             </h1>
             <div className="flex justify-between md:m-16 lg:m-20 2xl:m-24 pl-32 pt-8">
-              <div className="m-5">
-                <HobbyCircle
-                  hobby="Soccer"
-                  friends={Data.friendData.filter(
-                    (friend) => !friend.anonymous
-                  )}
-                />
-              </div>
-              <div className="m-5">
-                <HobbyCircle
-                  hobby="Painting"
-                  friends={AnonData.friendData.filter(
-                    (friend) => friend.anonymous
-                  )}
-                />
-              </div>
-              <div className="m-5">
-                <HobbyCircle
-                  hobby="Tennis"
-                  friends={AnonData.friendData.filter(
-                    (friend) => friend.anonymous
-                  )}
-                />
-              </div>
+              {UserData.similarInterests.map((hobby, i) => {
+                return (
+                  <div className="flex-wrap" key={i}>
+                    <HobbyCircle
+                      hobby={hobby}
+                      friends={Data.friendData.filter((friend) =>
+                        friend.similarInterests.includes(hobby)
+                      )}
+                    />
+                  </div>
+                )
+              })}
             </div>
           </div>
         ) : (

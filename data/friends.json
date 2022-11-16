@@ -2,7 +2,7 @@
   "friendData": [
     {
       "id": 1,
-      "name": "Zakaria Maria",
+      "name": "Han Solo",
       "online": true,
       "lastLogin": 1665604865,
       "favorite": true,
@@ -36,7 +36,7 @@
     },
     {
       "id": 2,
-      "name": "Rachana Agnes",
+      "name": "Bruce Wayne",
       "online": true,
       "favorite": true,
       "lastLogin": 1665604865,
@@ -70,7 +70,7 @@
     },
     {
       "id": 3,
-      "name": "Richard Peterson",
+      "name": "Sarah Connor",
       "online": false,
       "favorite": false,
       "lastLogin": 166561115,
@@ -82,22 +82,22 @@
       "messages": [
         {
           "id": 3,
-          "text": "DADAMaecenas eu velit quis sem tincidunt malesuada. Suspendisse iaculis lectus sapien, eget finibus lacus varius in.",
+          "text": "",
           "timestamp": 166561115
         },
         {
           "id": 0,
-          "text": "DofDASnec sed dui auctor, ultrices nibh aliquam, ornare arcu.",
+          "text": "",
           "timestamp": 166561190
         },
         {
           "id": 0,
-          "text": "Donec vel est eros. Etiam in lorem feugiat, euismod tellus ac, dictum nunc.",
+          "text": "",
           "timestamp": 1665611231
         },
         {
           "id": 3,
-          "text": "Cras semper mauris a felis consectetur pulvinar.",
+          "text": "",
           "timestamp": 1665613213
         }
       ]
@@ -112,7 +112,7 @@
       "age": 25,
       "icon": "icon",
       "mood": "happy",
-      "similarInterests": ["Tennis", "Skateboarding"],
+      "similarInterests": ["Board Games", "Golf"],
       "messages": [
         {
           "id": 4,
@@ -132,6 +132,74 @@
         {
           "id": 4,
           "text": "Cras semper mauris a felis consectetur pulvinar.",
+          "timestamp": 1665613213
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Nancy Drew",
+      "online": false,
+      "favorite": true,
+      "lastLogin": 160769115,
+      "anonymous": false,
+      "age": 25,
+      "icon": "icon",
+      "mood": "happy",
+      "similarInterests": ["Board Games", "Golf"],
+      "messages": [
+        {
+          "id": 4,
+          "text": "",
+          "timestamp": 166561115
+        },
+        {
+          "id": 0,
+          "text": "",
+          "timestamp": 166561190
+        },
+        {
+          "id": 0,
+          "text": "",
+          "timestamp": 1665611231
+        },
+        {
+          "id": 4,
+          "text": "",
+          "timestamp": 1665613213
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Tony Montana",
+      "online": false,
+      "favorite": true,
+      "lastLogin": 160769115,
+      "anonymous": false,
+      "age": 25,
+      "icon": "icon",
+      "mood": "happy",
+      "similarInterests": ["Board Games", "Golf"],
+      "messages": [
+        {
+          "id": 5,
+          "text": "",
+          "timestamp": 166561115
+        },
+        {
+          "id": 0,
+          "text": "",
+          "timestamp": 166561190
+        },
+        {
+          "id": 0,
+          "text": "",
+          "timestamp": 1665611231
+        },
+        {
+          "id": 5,
+          "text": "",
           "timestamp": 1665613213
         }
       ]

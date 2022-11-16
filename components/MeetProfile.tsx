@@ -62,7 +62,7 @@ function MeetProfile({ friend }: Props) {
 
   return (
     <div>
-      <div className="feature-box col-lg-4">
+      <div className="feature-box col-lg-4 cursor-pointer">
         <label className="swap swap-flip text-5xl">
           <input type="checkbox" />
           <div className="swap-on">{mood}</div>

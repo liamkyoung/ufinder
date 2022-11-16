@@ -20,7 +20,7 @@ const Meeting2: NextPage = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="carousel carousel-center max-w-2xl p-10 space-x-10 bg-neutral rounded-box mt-10">
+        <div className="carousel carousel-center max-w-2xl p-10 space-x-10 bg-neutral rounded-box mt-10 overflow-x-scroll">
           {Data.friendData.map((friend, i) => {
             if (
               search === '' ||
