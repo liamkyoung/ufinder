@@ -82,23 +82,13 @@
       "messages": [
         {
           "id": 3,
-          "text": "",
+          "text": "Hey! What are you doing?",
           "timestamp": 166561115
         },
         {
           "id": 0,
-          "text": "",
+          "text": "Not much, how about you?",
           "timestamp": 166561190
-        },
-        {
-          "id": 0,
-          "text": "",
-          "timestamp": 1665611231
-        },
-        {
-          "id": 3,
-          "text": "",
-          "timestamp": 1665613213
         }
       ]
     },
@@ -116,23 +106,18 @@
       "messages": [
         {
           "id": 4,
-          "text": "",
+          "text": "I love board games! It looks like you do too. What's your favorite one?",
           "timestamp": 166561115
         },
         {
           "id": 0,
-          "text": "",
+          "text": "Mine is Risk!",
           "timestamp": 166561190
         },
         {
           "id": 0,
-          "text": "",
+          "text": "Such a fun game.",
           "timestamp": 1665611231
-        },
-        {
-          "id": 4,
-          "text": "",
-          "timestamp": 1665613213
         }
       ]
     },
@@ -146,27 +131,12 @@
       "age": 25,
       "icon": "flashon",
       "mood": "medium",
-      "similarInterests": ["Board Games", "Golf"],
+      "similarInterests": ["Golf", "Board Games"],
       "messages": [
         {
           "id": 4,
-          "text": "",
+          "text": "Hey, I like Golf. What's your best score?",
           "timestamp": 166561115
-        },
-        {
-          "id": 0,
-          "text": "",
-          "timestamp": 166561190
-        },
-        {
-          "id": 0,
-          "text": "",
-          "timestamp": 1665611231
-        },
-        {
-          "id": 4,
-          "text": "",
-          "timestamp": 1665613213
         }
       ]
     },
@@ -180,27 +150,12 @@
       "age": 25,
       "icon": "automotive",
       "mood": "happy",
-      "similarInterests": ["Golf", "Board Games"],
+      "similarInterests": ["Painting", "Board Games"],
       "messages": [
         {
-          "id": 5,
-          "text": "",
+          "id": 0,
+          "text": "Painting is sooo fun, right?",
           "timestamp": 166561115
-        },
-        {
-          "id": 0,
-          "text": "",
-          "timestamp": 166561190
-        },
-        {
-          "id": 0,
-          "text": "",
-          "timestamp": 1665611231
-        },
-        {
-          "id": 5,
-          "text": "",
-          "timestamp": 1665613213
         }
       ]
     }
