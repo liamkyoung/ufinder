@@ -31,10 +31,10 @@ const Chat: NextPage = () => {
             <h1 className="text-3xl text-black font-cartoon text-center mt-10">
               Your Communities
             </h1>
-            <div className="grid grid-cols-3 gap-20 items-center md:m-16 lg:m-20 2xl:m-24 pl-32 pt-8">
+            <div className="grid grid-cols-3 gap-20 items-center md:m-16 lg:m-20 2xl:m-24 pl-24 xl:pl-72 pt-32">
               {UserData.similarInterests.map((hobby, i) => {
                 return (
-                  <div className="col-span-1" key={i}>
+                  <div className="col-span-3 lg:col-span-1" key={i}>
                     <HobbyCircle
                       hobby={hobby}
                       friends={Data.friendData.filter((friend) =>

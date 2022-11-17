@@ -20,6 +20,7 @@ import {
 } from '../redux/slices/currMessengerSlice'
 import Data from '../data/friends.json'
 import Modal from '../components/Modal'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -117,18 +118,20 @@ function AnonymousMessenger({}: Props) {
                 currMessenger.online ? 'text-pageGreen' : 'text-gray-800'
               }`}
             />
-            <div className="pl-5">
-              <h1 className="text-zinc-100 font-bold text-xl">
-                {currMessenger?.name}
-              </h1>
-              <div className="flex items-center">
-                <HeartIcon className="h-4 text-red-600" />
-                <h3 className="text-zinc-100 text-sm italic mx-2">
-                  {currInterests}
-                </h3>
-                <HeartIcon className="h-4 text-red-600" />
+            <Link href="/alternate/profile">
+              <div className="pl-5 cursor-pointer">
+                <h1 className="text-zinc-100 font-bold text-xl text-center">
+                  {currMessenger?.name}
+                </h1>
+                <div className="flex items-center">
+                  <HeartIcon className="h-4 text-red-600" />
+                  <h3 className="text-zinc-100 text-sm italic mx-2">
+                    {currInterests}
+                  </h3>
+                  <HeartIcon className="h-4 text-red-600" />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="flex items-end">
             {currMessenger.anonymous ? (

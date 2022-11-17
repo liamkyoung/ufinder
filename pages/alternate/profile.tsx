@@ -26,9 +26,11 @@ const Profile: NextPage = () => {
           <ProfileInfo
             name={Data.name}
             age={Data.age}
-            similarInterests={Data.similarInterests}
-            otherInterests={UserData.similarInterests.filter((interest) =>
-              UserData.similarInterests.includes(interest)
+            similarInterests={UserData.similarInterests.filter((interest) =>
+              Data.similarInterests.includes(interest)
+            )}
+            otherInterests={Data.similarInterests.filter(
+              (interest) => !UserData.similarInterests.includes(interest)
             )}
             primary={false}
           />

@@ -27,8 +27,8 @@ const Profile: NextPage = () => {
             name={Data.name}
             age={Data.age}
             similarInterests={Data.similarInterests}
-            otherInterests={UserData.similarInterests.filter((interest) =>
-              UserData.similarInterests.includes(interest)
+            otherInterests={Data.similarInterests.filter(
+              (interest) => !UserData.similarInterests.includes(interest)
             )}
             primary={true}
           />
