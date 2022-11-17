@@ -2,21 +2,39 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Header from '../../components/Header'
 import HeadMetaData from '../../components/HeadMetaData'
+import UserProfileInfo from '../../components/UserProfileInfo'
 import ProfileInfo from '../../components/ProfileInfo'
-import Data from '../../data/user.json'
+import UserData from '../../data/user.json'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 
 const Profile: NextPage = () => {
+  const Data = useSelector((state: RootState) => state.currentMessenger.value)
   return (
     <div className="page">
       <HeadMetaData title="UFinder | Profile" />
       <Header primary={false} />
       <div className="flex justify-center items-center mt-8">
-        <ProfileInfo
-          name={Data.user.name}
-          age={Data.user.age}
-          similarInterests={Data.user.similarInterests}
-          otherInterests={Data.user.otherInterests}
-        />
+        {Data.id === 999 ? (
+          <UserProfileInfo
+            name={Data.name}
+            age={Data.age}
+            interests={Data.similarInterests}
+            primary={false}
+          />
+        ) : (
+          <ProfileInfo
+            name={Data.name}
+            age={Data.age}
+            similarInterests={UserData.similarInterests.filter((interest) =>
+              Data.similarInterests.includes(interest)
+            )}
+            otherInterests={Data.similarInterests.filter(
+              (interest) => !UserData.similarInterests.includes(interest)
+            )}
+            primary={false}
+          />
+        )}
       </div>
     </div>
   )

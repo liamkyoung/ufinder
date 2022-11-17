@@ -2,13 +2,13 @@
   "friendData": [
     {
       "id": 1,
-      "name": "Zakaria Leo",
+      "name": "Han Solo",
       "online": true,
       "lastLogin": 1665604865,
       "favorite": true,
       "anonymous": false,
       "age": 19,
-      "icon": "icon",
+      "icon": "sportmode",
       "mood": "happy",
       "similarInterests": ["Golf", "Poker", "Reading", "Soccer"],
       "messages": [
@@ -36,13 +36,13 @@
     },
     {
       "id": 2,
-      "name": "Rachana Agnes",
+      "name": "Bruce Wayne",
       "online": true,
       "favorite": true,
       "lastLogin": 1665604865,
       "anonymous": false,
       "age": 22,
-      "icon": "icon",
+      "icon": "businessman",
       "mood": "happy",
       "similarInterests": ["Painting", "Action Movies"],
       "messages": [
@@ -70,35 +70,25 @@
     },
     {
       "id": 3,
-      "name": "Richard Peterson",
+      "name": "Sarah Connor",
       "online": false,
       "favorite": false,
       "lastLogin": 166561115,
       "anonymous": false,
       "age": 21,
-      "icon": "icon",
+      "icon": "globe",
       "mood": "sad",
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
         {
           "id": 3,
-          "text": "DADAMaecenas eu velit quis sem tincidunt malesuada. Suspendisse iaculis lectus sapien, eget finibus lacus varius in.",
+          "text": "Hey! What are you doing?",
           "timestamp": 166561115
         },
         {
           "id": 0,
-          "text": "DofDASnec sed dui auctor, ultrices nibh aliquam, ornare arcu.",
+          "text": "Not much, how about you?",
           "timestamp": 166561190
-        },
-        {
-          "id": 0,
-          "text": "Donec vel est eros. Etiam in lorem feugiat, euismod tellus ac, dictum nunc.",
-          "timestamp": 1665611231
-        },
-        {
-          "id": 3,
-          "text": "Cras semper mauris a felis consectetur pulvinar.",
-          "timestamp": 1665613213
         }
       ]
     },
@@ -110,29 +100,62 @@
       "lastLogin": 160769115,
       "anonymous": false,
       "age": 25,
-      "icon": "icon",
+      "icon": "landscape",
       "mood": "happy",
-      "similarInterests": ["Tennis", "Skateboarding"],
+      "similarInterests": ["Board Games", "Golf"],
       "messages": [
         {
           "id": 4,
-          "text": "Maecenas eu velit quis sem tincidunt malesuada. Suspendisse iaculis lectus sapien, eget finibus lacus varius in.",
+          "text": "I love board games! It looks like you do too. What's your favorite one?",
           "timestamp": 166561115
         },
         {
           "id": 0,
-          "text": "Donec sed dui auctor, ultrices nibh aliquam, ornare arcu.",
+          "text": "Mine is Risk!",
           "timestamp": 166561190
         },
         {
           "id": 0,
-          "text": "Donec vel est eros. Etiam in lorem feugiat, euismod tellus ac, dictum nunc.",
+          "text": "Such a fun game.",
           "timestamp": 1665611231
-        },
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Elle Woods",
+      "online": false,
+      "favorite": true,
+      "lastLogin": 160769115,
+      "anonymous": false,
+      "age": 25,
+      "icon": "flashon",
+      "mood": "medium",
+      "similarInterests": ["Golf", "Board Games"],
+      "messages": [
         {
           "id": 4,
-          "text": "Cras semper mauris a felis consectetur pulvinar.",
-          "timestamp": 1665613213
+          "text": "Hey, I like Golf. What's your best score?",
+          "timestamp": 166561115
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Tony Montana",
+      "online": false,
+      "favorite": true,
+      "lastLogin": 160769115,
+      "anonymous": false,
+      "age": 25,
+      "icon": "automotive",
+      "mood": "happy",
+      "similarInterests": ["Painting", "Board Games"],
+      "messages": [
+        {
+          "id": 0,
+          "text": "Painting is sooo fun, right?",
+          "timestamp": 166561115
         }
       ]
     }

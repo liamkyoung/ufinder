@@ -1,8 +1,20 @@
 {
-  "user": {
-    "name": "User",
-    "age": 21,
-    "similarInterests": ["Fishing", "Football", "Soccer", "Photography"],
-    "otherInterests": ["Card Games", "Board Games", "Eating Out", "Running"]
-  }
+  "id": 999,
+  "name": "John Doe",
+  "online": true,
+  "lastLogin": 1665604865,
+  "favorite": true,
+  "anonymous": false,
+  "age": 19,
+  "icon": "icon",
+  "mood": "happy",
+  "similarInterests": [
+    "Painting",
+    "Golf",
+    "Poker",
+    "Board Games",
+    "Tennis",
+    "Skateboarding"
+  ],
+  "messages": []
 }

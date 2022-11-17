@@ -11,6 +11,7 @@ import { RootState } from '../../redux/store'
 import AnonymousChats from '../../components/AnonymousChats'
 import HobbyCircle from '../../components/HobbyCircle'
 import MessengerInactive from '../../components/MessengerInactive'
+import UserData from '../../data/user.json'
 
 const Chat: NextPage = () => {
   const currMessenger = useSelector(
@@ -30,31 +31,19 @@ const Chat: NextPage = () => {
             <h1 className="text-3xl text-black font-cartoon text-center mt-10">
               Your Communities
             </h1>
-            <div className="flex justify-between md:m-16 lg:m-20 2xl:m-24 pl-32 pt-8">
-              <div className="m-5">
-                <HobbyCircle
-                  hobby="Soccer"
-                  friends={Data.friendData.filter(
-                    (friend) => !friend.anonymous
-                  )}
-                />
-              </div>
-              <div className="m-5">
-                <HobbyCircle
-                  hobby="Painting"
-                  friends={AnonData.friendData.filter(
-                    (friend) => friend.anonymous
-                  )}
-                />
-              </div>
-              <div className="m-5">
-                <HobbyCircle
-                  hobby="Tennis"
-                  friends={AnonData.friendData.filter(
-                    (friend) => friend.anonymous
-                  )}
-                />
-              </div>
+            <div className="grid grid-cols-3 gap-20 items-center md:m-16 lg:m-20 2xl:m-24 pl-24 xl:pl-72 pt-32">
+              {UserData.similarInterests.map((hobby, i) => {
+                return (
+                  <div className="col-span-3 lg:col-span-1" key={i}>
+                    <HobbyCircle
+                      hobby={hobby}
+                      friends={Data.friendData.filter((friend) =>
+                        friend.similarInterests.includes(hobby)
+                      )}
+                    />
+                  </div>
+                )
+              })}
             </div>
           </div>
         ) : (

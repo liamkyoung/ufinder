@@ -50,7 +50,7 @@ const Interests: NextPage = () => {
 
       <div className="fixed bottom-0 w-full">
         {interests.size >= 3 ? (
-          <InterestButton active={true} link="/pair" />
+          <InterestButton active={true} link="/prepair" />
         ) : (
           <InterestButton active={false} link="" />
         )}

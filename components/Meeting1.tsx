@@ -17,331 +17,111 @@ import { FcBiomass } from 'react-icons/fc'
 import { FcBrokenLink } from 'react-icons/fc'
 import { FcDebian } from 'react-icons/fc'
 import { FcDislike } from 'react-icons/fc'
+import Data from '../data/friends.json'
+import Emoji from './Emoji'
+
+type Message = {
+  id: number
+  text: string
+  timestamp: number
+}
+
+export type Friend = {
+  id: number
+  name: string
+  online: boolean
+  anonymous: boolean
+  favorite: boolean
+  lastLogin: number
+  age: number
+  icon: string
+  mood: string
+  similarInterests: string[]
+  messages: Message[]
+}
 
 const Meeting1: NextPage = () => {
+  const setIcon = (friend: Friend) => {
+    if (!friend.icon) return <FcLikePlaceholder />
+    if (friend.icon === 'businessman') return <FcBusinessman />
+    if (friend.icon === 'rating') return <FcRating />
+    if (friend.icon === 'sportmode') return <FcSportsMode />
+    if (friend.icon === 'globe') return <FcGlobe />
+    if (friend.icon === 'landscape') return <FcLandscape />
+    if (friend.icon === 'flashon') return <FcFlashOn />
+    if (friend.icon === 'automotive') return <FcAutomotive />
+
+    return <FcLikePlaceholder />
+  }
+
+  const setMood = (friend: Friend) => {
+    if (friend.mood === 'happy') return <Emoji emoji="&#x1f602;" />
+    if (friend.mood === 'medium') return <Emoji emoji="&#x1f610;" />
+    if (friend.mood === 'sad') return <Emoji emoji="&#x1f641;" />
+  }
+
+  const friendMap = (index: number) => {
+    const res = Data.friendData.map((friend, i) => {
+      if (i % 3 !== index) return <></>
+
+      return (
+        <div className="col-lg-4 p-5" key={i}>
+          <div className="feature-box  flex ">
+            <label className="swap swap-flip text-5xl mr-3">
+              <input type="checkbox" />
+              <div className="swap-on">{setMood(friend)}</div>
+              <div className="swap-off">{setIcon(friend)}</div>
+            </label>
+            <div className="flex items-center justify-between flex-1 mt-1">
+              <h2 className="font-bold text-xl">{friend.name}</h2>
+              <h4 className="text-right min-w-max">
+                ❤️ {friend.similarInterests[0]}
+              </h4>
+            </div>
+          </div>
+          <div className="flex justify-between items-center mt-2">
+            {friend.online ? (
+              <p className="text-green-600 bg-green-300 p-1 rounded-md">
+                Online
+              </p>
+            ) : (
+              <p className="text-red-700 bg-red-200 p-1 rounded-md">Offline</p>
+            )}
+            <h1 className="text-white bg-gray-500 font-bold p-1 rounded-md">
+              Age: {friend.age}
+            </h1>
+          </div>
+        </div>
+      )
+    })
+
+    return res
+  }
+
   return (
     <div className="container" id="features">
-      <div className="mainText col-lg-6">
-        <h2 className="font-cartoon">Meet Each Other!</h2>
+      <div className="col-lg-6">
+        <h2 className=" text-center font-cartoon">Meet Each Other!</h2>
       </div>
 
-      <div>
+      <div className="flex justify-center">
         <input
           type="text"
           placeholder="Search..."
           className="conversationBox1 input input-bordered w-full max-w-xs"
         />
       </div>
-
-      <div className="item3 rounded bg-[#f6f9fa]">
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcBusinessman />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Bruce Wayne</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-14">
-            <h4>❤️ Reading</h4>
-          </div>
+      <div className="flex justify-center space-x-10">
+        <div className="rounded border-[#6495ed] border-4 bg-[#f6f9fa]">
+          {friendMap(0)}
         </div>
 
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😐</div>
-            <div className="swap-off">
-              <FcLikePlaceholder />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Kevin Wu</h2>
-            <p className="text-orange-300">Busy</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Music</h4>
-          </div>
+        <div className="rounded border-[#6495ed] border-4 static bg-[#f6f9fa]">
+          {friendMap(1)}
         </div>
 
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😐</div>
-            <div className="swap-off">
-              <FcSportsMode />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Robert Smith</h2>
-            <p className="text-orange-300">Busy</p>
-          </div>
-          <div className="ml-14">
-            <h4>❤️ Camping</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcBusinesswoman />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Gabe Brill</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Speaking</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😐</div>
-            <div className="swap-off">
-              <FcCloseUpMode />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">White Fuj</h2>
-            <p className="text-orange-300">Busy</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Pop Music</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">🙁</div>
-            <div className="swap-off">
-              <FcSportsMode />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Lucio Lee</h2>
-            <p>3 days ago</p>
-          </div>
-          <div className="ml-16">
-            <h4>❤️ Catching</h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="item2 rounded static bg-[#f6f9fa]">
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcBusinessman />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Bruce Wayne</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-14">
-            <h4>❤️ Reading</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😐</div>
-            <div className="swap-off">
-              <FcFlashOn />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Will Davis</h2>
-            <p className="text-orange-300">Busy</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Music</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">🙁</div>
-            <div className="swap-off">
-              <FcRating />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Mary Johnson</h2>
-            <p>1 week ago</p>
-          </div>
-          <div className="ml-12">
-            <h4>❤️ Camping</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcBusinesswoman />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Gabe Brill</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Lecturing</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcCloseUpMode />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Emma Andrew</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-8">
-            <h4>❤️ Quiet Music</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">🙁</div>
-            <div className="swap-off">
-              <FcBiomass />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Olivar Noah</h2>
-            <p>7 days ago</p>
-          </div>
-          <div className="ml-16">
-            <h4>❤️ Basketball</h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="item4 rounded static bg-[#f6f9fa]">
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcBrokenLink />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">ElizaBeth Mia</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-14">
-            <h4>❤️ Painting</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😐</div>
-            <div className="swap-off">
-              <FcFlashOn />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Will Davis</h2>
-            <p className="text-orange-300">Busy</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Cooking</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">🙁</div>
-            <div className="swap-off">
-              <FcRating />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Mary Johnson</h2>
-            <p>3 week ago</p>
-          </div>
-          <div className="ml-12">
-            <h4>❤️ Travel</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcDebian />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Susan Jim</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-20">
-            <h4>❤️ Acting</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">😄</div>
-            <div className="swap-off">
-              <FcCloseUpMode />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Linda David</h2>
-            <p className="text-green-600">Online</p>
-          </div>
-          <div className="ml-14">
-            <h4>❤️ Gardening</h4>
-          </div>
-        </div>
-
-        <div className="feature-box col-lg-4 flex">
-          <label className="swap swap-flip text-5xl mr-3">
-            <input type="checkbox" />
-            <div className="swap-on">🙁</div>
-            <div className="swap-off">
-              <FcDislike />
-            </div>
-          </label>
-          <div>
-            <h2 className="feature-title">Olivar Noah</h2>
-            <p>12 days ago</p>
-          </div>
-          <div className="ml-16">
-            <h4>❤️ Football</h4>
-          </div>
+        <div className="rounded border-[#6495ed] border-4 static bg-[#f6f9fa]">
+          {friendMap(2)}
         </div>
       </div>
     </div>

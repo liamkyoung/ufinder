@@ -38,13 +38,15 @@ function ProfileCircle({ friend, pos }: Props) {
   const dispatch = useDispatch()
   return (
     <div
-      className={`w-12 h-12 absolute bg-purple-700 rounded-full hover:cursor-pointer`}
+      className={`w-12 h-12 absolute rounded-full hover:cursor-pointer ${
+        friend.online ? 'bg-green-600' : 'bg-red-600'
+      }`}
       style={{ top: `${pos.y}px`, left: `${pos.x}px` }}
       onMouseOver={() => setVisible(true)}
       onMouseOut={() => setVisible(false)}
       onClick={() => dispatch(setCurrMessenger(friend))}
     >
-      <FaceSmileIcon className="h-full" />
+      <FaceSmileIcon className="h-full text-zinc-100" />
       {visible ? (
         <div className="bg-slate-500 min-w-fit rounded-lg text-center flex items-center px-5 justify-between">
           <h1 className="font-cartoon text-lg p-3 text-black">

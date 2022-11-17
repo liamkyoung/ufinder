@@ -20,6 +20,7 @@ import {
 import fs from 'fs'
 import Data from '../data/friends.json'
 import Modal from '../components/Modal'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -119,9 +120,12 @@ function MessengerActive({}: Props) {
               <MoonIcon className={`h-6  pr-2 text-pageBlue`} />
             )}
             <div>
-              <h1 className="text-zinc-100 font-bold text-xl text-center">
-                {currMessenger?.name}
-              </h1>
+              <Link href="/profile">
+                <h1 className="text-zinc-100 font-bold text-xl text-center cursor-pointer">
+                  {currMessenger?.name}
+                </h1>
+              </Link>
+
               <div className="flex items-center">
                 <HeartIcon className="h-4 text-red-600 pl-2" />
                 <h1 className="text-sm text-zinc-100 italic">

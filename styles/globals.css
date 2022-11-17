@@ -85,7 +85,7 @@
 
   .conversationBox1 {
     border: 5px solid #6495ed;
-    margin: 10px 540px;
+    margin-bottom: 50px;
   }
 
   .mainText {
@@ -125,6 +125,10 @@
 
   .row {
     padding: 3% 15% 7%;
+  }
+
+  .scroll-w {
+    scrollbar-width: 10px;
   }
 
   h2 {
