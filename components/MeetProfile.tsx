@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fc'
 import { CiFaceSmile } from 'react-icons/ci'
 import Emoji from './Emoji'
+import Link from 'next/link'
 
 type Friend = {
   id: number
@@ -61,26 +62,33 @@ function MeetProfile({ friend }: Props) {
   const mood = setMood()
 
   return (
-    <div>
-      <div className="feature-box col-lg-4 cursor-pointer">
-        <label className="swap swap-flip text-5xl">
-          <input type="checkbox" />
-          <div className="swap-on">{mood}</div>
-          <div className="swap-off">{icon}</div>
-        </label>
-        <div className="flex justify-between">
-          <h2 className="feature-title">{friend.name}</h2>
-          <h3>Age: {friend.age}</h3>
+    <div className="feature-box col-lg-4 cursor-pointer flex flex-1 flex-col justify-center">
+      <label className="swap swap-flip text-5xl justify-center">
+        <input type="checkbox" />
+        <div className="swap-on">{mood}</div>
+        <div className="swap-off">
+          <FcLikePlaceholder />
         </div>
-        <div className="flex justify-between">
-          {friend.online ? (
-            <p className="text-green-600">Online</p>
-          ) : (
-            <p>Last Online: {new Date(friend.lastLogin).getHours()}</p>
-          )}
+      </label>
 
-          <h4>❤️ {friend.similarInterests.join(', ')}</h4>
-        </div>
+      <h2 className="feature-title text-center text-3xl">{friend.name}</h2>
+
+      <h3 className="text-center mt-2">Age: {friend.age}</h3>
+      <div className="flex justify-between">
+        {friend.online ? (
+          <p className="text-green-600 bg-green-300 p-2 rounded-md font-bold text-center">
+            Online
+          </p>
+        ) : (
+          <p className="text-yellow-600 bg-yellow-300 p-2 rounded-md font-bold text-center">
+            Last Online: {new Date(friend.lastLogin).getHours()} hours ago
+          </p>
+        )}
+
+        <h4 className="bg-slate-500 p-2 rounded-md text-white font-bold">
+          <span className="text-xl ">❤️</span>{' '}
+          {friend.similarInterests.join(', ')}
+        </h4>
       </div>
     </div>
   )

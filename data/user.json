@@ -1,5 +1,5 @@
 {
-  "id": 1,
+  "id": 999,
   "name": "John Doe",
   "online": true,
   "lastLogin": 1665604865,
@@ -14,9 +14,7 @@
     "Poker",
     "Board Games",
     "Tennis",
-    "Skateboarding",
-    "Painting",
-    "Action Movies"
+    "Skateboarding"
   ],
   "messages": []
 }

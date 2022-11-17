@@ -8,7 +8,7 @@
       "favorite": true,
       "anonymous": false,
       "age": 19,
-      "icon": "icon",
+      "icon": "sportmode",
       "mood": "happy",
       "similarInterests": ["Golf", "Poker", "Reading", "Soccer"],
       "messages": [
@@ -42,7 +42,7 @@
       "lastLogin": 1665604865,
       "anonymous": false,
       "age": 22,
-      "icon": "icon",
+      "icon": "businessman",
       "mood": "happy",
       "similarInterests": ["Painting", "Action Movies"],
       "messages": [
@@ -76,7 +76,7 @@
       "lastLogin": 166561115,
       "anonymous": false,
       "age": 21,
-      "icon": "icon",
+      "icon": "globe",
       "mood": "sad",
       "similarInterests": ["Tennis", "Skateboarding"],
       "messages": [
@@ -110,42 +110,42 @@
       "lastLogin": 160769115,
       "anonymous": false,
       "age": 25,
-      "icon": "icon",
+      "icon": "landscape",
       "mood": "happy",
       "similarInterests": ["Board Games", "Golf"],
       "messages": [
         {
           "id": 4,
-          "text": "Maecenas eu velit quis sem tincidunt malesuada. Suspendisse iaculis lectus sapien, eget finibus lacus varius in.",
+          "text": "",
           "timestamp": 166561115
         },
         {
           "id": 0,
-          "text": "Donec sed dui auctor, ultrices nibh aliquam, ornare arcu.",
+          "text": "",
           "timestamp": 166561190
         },
         {
           "id": 0,
-          "text": "Donec vel est eros. Etiam in lorem feugiat, euismod tellus ac, dictum nunc.",
+          "text": "",
           "timestamp": 1665611231
         },
         {
           "id": 4,
-          "text": "Cras semper mauris a felis consectetur pulvinar.",
+          "text": "",
           "timestamp": 1665613213
         }
       ]
     },
     {
       "id": 5,
-      "name": "Nancy Drew",
+      "name": "Elle Woods",
       "online": false,
       "favorite": true,
       "lastLogin": 160769115,
       "anonymous": false,
       "age": 25,
-      "icon": "icon",
-      "mood": "happy",
+      "icon": "flashon",
+      "mood": "medium",
       "similarInterests": ["Board Games", "Golf"],
       "messages": [
         {
@@ -178,9 +178,9 @@
       "lastLogin": 160769115,
       "anonymous": false,
       "age": 25,
-      "icon": "icon",
+      "icon": "automotive",
       "mood": "happy",
-      "similarInterests": ["Board Games", "Golf"],
+      "similarInterests": ["Golf", "Board Games"],
       "messages": [
         {
           "id": 5,

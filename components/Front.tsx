@@ -4,10 +4,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 type Props = {
-  link: string
+  interestLink: string
+  friendsLink: string
 }
 
-const Front = ({ link }: Props) => {
+const Front = ({ interestLink, friendsLink }: Props) => {
   return (
     <div className="row">
       <div className="col-lg-6 alltext text-gray-800">
@@ -17,12 +18,20 @@ const Front = ({ link }: Props) => {
         <h2 className="font-cartoon text-pageGray italic -mt-3">
           Meet Gators Just Like You!
         </h2>
-        <Link href={link}>
+        <Link href={interestLink}>
           <button
             type="button"
             className="btn btn-lg download-button btn-warning font-bold font-poppins"
           >
-            Click here to start &gt;{' '}
+            Select Your Interests &gt;{' '}
+          </button>
+        </Link>
+        <Link href={friendsLink}>
+          <button
+            type="button"
+            className="btn btn-lg download-button btn-info font-bold font-poppins"
+          >
+            View Friends List &gt;{' '}
           </button>
         </Link>
       </div>

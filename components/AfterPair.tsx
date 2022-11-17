@@ -55,7 +55,10 @@ function AfterPair({ primary, link }: Props) {
         </Link>
 
         <Link href="/profile">
-          <button className="btn btn-info ml-1 md:ml-5 xl:ml-32 btn-lg">
+          <button
+            className="btn btn-info ml-1 md:ml-5 xl:ml-32 btn-lg"
+            onClick={() => dispatch(setCurrMessenger(randomFriend))}
+          >
             View Profile
           </button>
         </Link>

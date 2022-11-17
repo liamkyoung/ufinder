@@ -51,7 +51,7 @@ function InterestList({}: Props) {
       </div>
       <div className="fixed bottom-0 w-full text-gray-800 text-bold font-cartoon">
         {interests.size >= 3 ? (
-          <InterestButton active={true} link="/alternate/pair" />
+          <InterestButton active={true} link="/alternate/prepair" />
         ) : (
           <InterestButton active={false} link="" />
         )}

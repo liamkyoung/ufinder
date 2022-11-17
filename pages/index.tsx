@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <div className="page">
       <HeadMetaData title="UFinder | Home" />
       <Header primary={true} />
-      <Front link="/interests" />
+      <Front interestLink="/interests" friendsLink="/meet" />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import {
   FaceSmileIcon,
   NoSymbolIcon,
   UserPlusIcon,
+  PencilIcon,
 } from '@heroicons/react/24/solid'
 import React from 'react'
 import Link from 'next/link'
@@ -11,31 +12,22 @@ import Link from 'next/link'
 type Props = {
   name: string
   age: number
-  similarInterests: string[]
-  otherInterests: string[]
+  interests: string[]
   primary: boolean
 }
 
-function ProfileInfo({
-  name,
-  age,
-  similarInterests,
-  otherInterests,
-  primary,
-}: Props) {
+function UserProfileInfo({ name, age, interests, primary }: Props) {
   return (
-    <div className="bg-gray-800 shadow-lg rounded-md p-10">
+    <div className="bg-gray-800 shadow-lg rounded-md p-10 w-6/12">
       <div className="flex justify-between text-white">
         <div className="flex-1">
-          <Link href={primary ? '/chat' : '/alternate/chat'}>
+          <Link href={primary ? '/' : '/alternate/'}>
             <ChevronLeftIcon className="profileButton" />
           </Link>
         </div>
 
         <div className="flex">
-          <UserPlusIcon className="profileButton" />
-          <NoSymbolIcon className="profileButton" />
-          <ChatBubbleLeftRightIcon className="profileButton" />
+          <PencilIcon className="profileButton" />
         </div>
       </div>
       <div className="flex justify-center items-start w-full pt-5">
@@ -48,23 +40,13 @@ function ProfileInfo({
           {age} years old
         </div>
       </div>
-      <div className="border-2 border-white rounded-md flex justify-between">
-        <div className="border-2 border-zinc-200 border-opacity-50 m-2 p-2 rounded-md">
+      <div className="border-2 border-white rounded-md flex justify-center">
+        <div className="border-opacity-50 m-2 p-2 rounded-md">
           <div className="text-white font-cartoon text-2xl mb-1">
-            Similar Interests:
+            Interests:
           </div>{' '}
-          {similarInterests?.map((interest, i) => (
-            <h1 key={i} className="font-cartoon text-white text-center">
-              {interest}
-            </h1>
-          ))}
-        </div>
-        <div className="border-2 border-zinc-200 border-opacity-50 m-2 p-2 rounded-md">
-          <div className="text-white font-cartoon text-2xl mb-1">
-            Other Interests:
-          </div>{' '}
-          {otherInterests?.map((interest, i) => (
-            <h1 key={i} className="font-cartoon text-white text-center">
+          {interests?.map((interest, i) => (
+            <h1 key={i} className="font-cartoon text-white text-center text-lg">
               {interest}
             </h1>
           ))}
@@ -74,4 +56,4 @@ function ProfileInfo({
   )
 }
 
-export default ProfileInfo
+export default UserProfileInfo
