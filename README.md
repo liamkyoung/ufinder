@@ -2,7 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Make sure NODEJS is installed prior to starting
+
+`cd  ./ufinder`
+`npm install`
+
+Then, run the development server:
 
 ```bash
 npm run dev
